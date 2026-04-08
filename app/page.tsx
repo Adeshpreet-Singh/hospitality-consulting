@@ -4,6 +4,7 @@ import { useState } from 'react';
 
 export default function Home() {
   const [menuOpen, setMenuOpen] = useState(false);
+  const [submitted, setSubmitted] = useState(false);
 
   const scrollToSection = (id: string) => {
     const element = document.getElementById(id);
@@ -38,7 +39,19 @@ export default function Home() {
           </div>
         </nav>
       </header>
-      <main id="main-content" role="main">
+      
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{__html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "ProfessionalService",
+            "name": "Hospitality Consulting",
+            "url": "https://hospitality-consulting.com",
+            "description": "Professional hospitality consulting services.",
+          })}}
+        />
+
+        <main id="main-content" role="main">
         <section aria-labelledby="hero-heading" className="pt-24 pb-16 relative overflow-hidden">
           <div className="absolute inset-0" aria-hidden="true"><div className="absolute top-20 right-20 w-96 h-96 bg-slate-200/30 rounded-full blur-3xl"/></div>
           <div className="relative max-w-7xl mx-auto px-6 py-20 grid md:grid-cols-2 gap-12 items-center">
@@ -69,16 +82,72 @@ export default function Home() {
           <div className="max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-16">
             <div><p className="text-slate-600 text-sm font-medium mb-4">GET STARTED</p><h2 id="contact-heading" className="text-4xl font-bold text-slate-900 mb-6">Book Your Strategy Session</h2><p className="text-gray-600 mb-8">60-minute deep dive into your hospitality challenges and opportunities.</p></div>
             <div className="bg-white rounded-2xl shadow-xl p-8">
-              <form onSubmit={(e) => e.preventDefault()} noValidate className="space-y-6">
+              <form onSubmit={(e) => { e.preventDefault(); setSubmitted(true); setTimeout(() => setSubmitted(false), 3000); }} noValidate className="space-y-6">
                 <div><label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-2">Your Name</label><input id="name" type="text" aria-required="true" placeholder="Alex Hotelier" className="w-full border border-gray-200 rounded-xl px-4 py-3 text-gray-900 focus:border-slate-500 focus:ring-2 focus:ring-slate-200 focus:outline-none transition-colors"/></div>
                 <div><label htmlFor="business" className="block text-sm font-medium text-gray-700 mb-2">Business Type</label><select id="business" className="w-full border border-gray-200 rounded-xl px-4 py-3 text-gray-900 focus:border-slate-500 focus:ring-2 focus:ring-slate-200 focus:outline-none transition-colors"><option value="">Select type</option><option value="hotel">Hotel</option><option value="resort">Resort</option><option value="restaurant">Restaurant</option><option value="other">Other</option></select></div>
                 <button type="submit" aria-label="Book your strategy session" className="w-full bg-slate-800 text-white py-4 rounded-xl font-medium hover:bg-slate-900 transition-all hover:scale-[1.02] focus-visible:outline-2 focus-visible:outline-slate-500 focus-visible:outline-offset-2">Book Session</button>
+              {submitted && <p className="text-center text-green-500 text-sm mt-2 animate-pulse">Sent! We will be in touch soon.</p>}
               </form>
             </div>
           </div>
         </section>
+      
+        
+        {/* Testimonials */}
+        <section className="py-24" aria-labelledby="testimonials-heading">
+          <div className="max-w-4xl mx-auto px-6">
+            <div className="text-center mb-12">
+              <h2 id="testimonials-heading" className="text-3xl md:text-4xl font-bold mb-4">What people are saying</h2>
+              <p className="text-current/60">Real feedback from real clients.</p>
+            </div>
+            <div className="grid md:grid-cols-3 gap-6">
+              {[
+            {name: 'Robert Chen', text: 'Revenue up 34% within 6 months of implementing their recommendations.'},
+            {name: 'Sarah Mitchell', text: 'They transformed our guest experience scores from 3.8 to 4.7 stars.'},
+            {name: 'David Park', text: 'The training program completely changed our team culture. Retention is up 40%.'}
+              ].map((t, i) => (
+                <div key={i} className="rounded-xl p-6 border border-current/10">
+                  <p className="mb-4 italic text-sm leading-relaxed">&ldquo;{t.text}&rdquo;</p>
+                  <div className="font-medium text-sm">{t.name}</div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* FAQ Section */}
+        <section className="py-24" aria-labelledby="faq-heading">
+          <div className="max-w-4xl mx-auto px-6">
+            <div className="text-center mb-12">
+              <h2 id="faq-heading" className="text-3xl md:text-4xl font-bold mb-4">Frequently Asked Questions</h2>
+              <p className="text-current/60">Everything you need to know.</p>
+            </div>
+            <div className="space-y-4">
+              {{[
+          {question: 'How do I schedule an appointment?', answer: 'Call us, text us, or fill out the contact form. We typically respond within 1 hour during business hours.'},
+          {question: 'Are you licensed and insured?', answer: 'Yes. We are fully licensed, bonded, and carry comprehensive liability insurance.'},
+          {question: 'Do you offer free estimates?', answer: 'Yes. We provide free, no-obligation estimates for all services. Call or fill out our form to get started.'},
+          {question: 'What areas do you serve?', answer: 'We serve the entire metro area. Contact us to confirm service availability in your specific location.'}
+              ].map((faq, i) => (
+                <details key={i} className="group border border-current/10 rounded-xl p-5 [&_summary]:cursor-pointer">
+                  <summary className="font-medium flex justify-between items-center list-none">
+                    {faq.question}
+                    <span className="ml-4 text-current/40 group-open:rotate-45 transition-transform">+</span>
+                  </summary>
+                  <p className="mt-3 text-current/60 text-sm leading-relaxed">{faq.answer}</p>
+                </details>
+              ))}}
+            </div>
+          </div>
+        </section>
       </main>
-      <footer role="contentinfo" className="py-12 bg-slate-900"><div className="max-w-7xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-6"><div className="flex items-center gap-3"><div className="w-8 h-8 bg-slate-700 rounded-lg flex items-center justify-center text-white font-bold" aria-hidden="true">E</div><span className="text-white font-bold">Elevate Hospitality</span></div><p className="text-slate-400 text-sm">Transforming hospitality since 2011</p></div></footer>
+      <footer role="contentinfo" className="py-12 bg-slate-900"><div className="max-w-7xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-6"><div className="flex items-center gap-3"><div className="w-8 h-8 bg-slate-700 rounded-lg flex items-center justify-center text-white font-bold" aria-hidden="true">E</div><span className="text-white font-bold">Elevate Hospitality</span></div><p className="text-slate-400 text-sm">Transforming hospitality since 2011</p>
+            <div className="flex gap-4 text-sm">
+              <a href="#" className="hover:underline">Twitter</a>
+              <a href="#" className="hover:underline">LinkedIn</a>
+              <a href="#" className="hover:underline">Instagram</a>
+            </div>
+          </div></footer>
     </div>
   );
 }
