@@ -6,179 +6,256 @@ export default function Home() {
   const [menuOpen, setMenuOpen] = useState(false);
   const [submitted, setSubmitted] = useState(false);
 
-  const scrollToSection = (id: string) => {
-    const element = document.getElementById(id);
-    if (element) { element.scrollIntoView({ behavior: 'smooth' }); element.focus(); }
+  const scrollTo = (id: string) => {
+    document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' });
     setMenuOpen(false);
   };
 
-  const services = [
-    { title: 'Operations', desc: 'Efficiency, SOPs, quality standards', icon: '\u2699\uFE0F' },
-    { title: 'Revenue Strategy', desc: 'Pricing, distribution, upselling', icon: '\uD83D\uDCC8' },
-    { title: 'Guest Experience', desc: 'Journey mapping, service design', icon: '\u2B50' },
-    { title: 'Digital Transformation', desc: 'Tech stack, automation, AI', icon: '\uD83D\uDCBB' },
-  ];
-
   return (
-    <div className="bg-slate-50 text-gray-900 min-h-screen">
-      <a href="#main-content" className="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 bg-slate-800 text-white px-4 py-2 rounded-lg z-[100] focus-visible:outline-2 focus-visible:outline-white font-bold">Skip to main content</a>
+    <div className="min-h-screen bg-slate-950 text-slate-100">
+      <a href="#main" className="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 bg-teal-400 text-black px-4 py-2 rounded z-[100] font-bold">
+        Skip to main content
+      </a>
+
       <header>
-        <nav role="navigation" aria-label="Main navigation" className="fixed top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-md shadow-sm">
-          <div className="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
-            <div className="flex items-center gap-3">
-              <div className="w-10 h-10 bg-slate-800 rounded-xl flex items-center justify-center text-white font-bold text-lg" aria-hidden="true">E</div>
-              <div><h1 className="text-lg font-bold text-slate-900">Elevate Hospitality</h1><p className="text-[9px] text-slate-600 tracking-wider">CONSULTING GROUP</p></div>
+        <nav role="navigation" aria-label="Main navigation" className="fixed top-0 left-0 right-0 z-50 bg-slate-950/95 backdrop-blur-md border-b border-current/10">
+          <div className="max-w-6xl mx-auto px-6 py-4 flex justify-between items-center">
+            <div>
+              <h1 className="text-xl tracking-tight font-bold">Apex Hospitality</h1>
+              <p className="text-xs text-slate-400 tracking-wider uppercase">Est. 2012</p>
             </div>
             <div className="hidden md:flex items-center gap-8">
-              {['Services','Case Studies','About','Contact'].map(item => (<button key={item} onClick={() => scrollToSection(item.toLowerCase().replace(' ','-'))} aria-label={`Navigate to ${item} section`} className="text-sm text-gray-600 hover:text-slate-800 transition-colors focus-visible:outline-2 focus-visible:outline-slate-500 focus-visible:outline-offset-2 rounded">{item}</button>))}
-              <button aria-label="Schedule a strategy session" className="bg-slate-800 text-white px-6 py-2.5 rounded-full text-sm font-medium hover:bg-slate-900 transition-colors focus-visible:outline-2 focus-visible:outline-slate-500 focus-visible:outline-offset-2">Strategy Session</button>
+              <button onClick={() => scrollTo('services')} className="text-sm text-slate-400 hover:text-teal-400 transition-colors">Services</button>
+              <button onClick={() => scrollTo('team')} className="text-sm text-slate-400 hover:text-teal-400 transition-colors">Team</button>
+              <button onClick={() => scrollTo('faq')} className="text-sm text-slate-400 hover:text-teal-400 transition-colors">FAQ</button>
+              <button onClick={() => scrollTo('contact')} className="text-sm text-slate-400 hover:text-teal-400 transition-colors">Contact</button>
+              <button onClick={() => scrollTo('contact')} className="bg-teal-400 text-black px-6 py-2.5 text-sm font-medium rounded-full hover:opacity-90 transition-opacity">
+                Book Consultation
+              </button>
             </div>
-            <button aria-label={menuOpen?"Close menu":"Open menu"} aria-expanded={menuOpen} className="md:hidden text-slate-800 focus-visible:outline-2 focus-visible:outline-slate-500 rounded" onClick={() => setMenuOpen(!menuOpen)}>
-              <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">{menuOpen?<path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12"/>:<path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16"/>}</svg>
+            <button onClick={() => setMenuOpen(!menuOpen)} className="md:hidden" aria-label={menuOpen ? 'Close menu' : 'Open menu'} aria-expanded={menuOpen}>
+              <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                {menuOpen ? (
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+                ) : (
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
+                )}
+              </svg>
             </button>
           </div>
+          {menuOpen && (
+            <div className="md:hidden bg-slate-950 border-t border-current/10 px-6 py-4 space-y-1">
+              <button onClick={() => scrollTo('services')} className="block w-full text-left px-4 py-3 text-slate-400 hover:text-teal-400">Services</button>
+              <button onClick={() => scrollTo('team')} className="block w-full text-left px-4 py-3 text-slate-400 hover:text-teal-400">Team</button>
+              <button onClick={() => scrollTo('faq')} className="block w-full text-left px-4 py-3 text-slate-400 hover:text-teal-400">FAQ</button>
+              <button onClick={() => scrollTo('contact')} className="block w-full text-left px-4 py-3 text-slate-400 hover:text-teal-400">Contact</button>
+            </div>
+          )}
         </nav>
       </header>
-      
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{__html: JSON.stringify({
-            "@context": "https://schema.org",
-            "@type": "ProfessionalService",
-            "name": "Hospitality Consulting",
-            "url": "https://hospitality-consulting.com",
-            "description": "Professional hospitality consulting services.",
-          })}}
-        />
 
-        <main id="main-content" role="main">
-        <section aria-labelledby="hero-heading" className="pt-24 pb-16 relative overflow-hidden">
-          <div className="absolute inset-0" aria-hidden="true"><div className="absolute top-20 right-20 w-96 h-96 bg-slate-200/30 rounded-full blur-3xl"/></div>
-          <div className="relative max-w-7xl mx-auto px-6 py-20 grid md:grid-cols-2 gap-12 items-center">
-            <div>
-              <p className="text-slate-600 text-sm font-medium mb-4">HOSPITALITY EXPERTS</p>
-              <h2 id="hero-heading" className="text-5xl md:text-6xl font-bold mb-6 leading-tight text-slate-900">Elevate<br/><span className="text-slate-500">Your Guest Experience</span></h2>
-              <p className="text-xl text-gray-600 mb-8 max-w-lg">Strategic consulting for hotels, resorts, and restaurants. We help you delight guests and drive revenue.</p>
-              <div className="flex flex-wrap gap-4 mb-10">
-                <button aria-label="Schedule your strategy session" className="bg-slate-800 text-white px-8 py-4 rounded-full text-lg font-medium hover:bg-slate-900 transition-all hover:scale-105 focus-visible:outline-2 focus-visible:outline-slate-500 focus-visible:outline-offset-2">Book Strategy Session</button>
-                <button aria-label="View our case studies" className="border-2 border-slate-800 text-slate-800 px-8 py-4 rounded-full text-lg font-medium hover:bg-slate-50 transition-all hover:scale-105 focus-visible:outline-2 focus-visible:outline-slate-500 focus-visible:outline-offset-2">Case Studies</button>
-              </div>
-              <div className="flex items-center gap-8">
-                {[{num:'200+',label:'Hotels Served'},{num:'$50M+',label:'Revenue Impact'},{num:'15+',label:'Years Experience'}].map((s,i) => (<div key={i}><div className="text-2xl font-bold text-slate-800">{s.num}</div><div className="text-sm text-gray-500">{s.label}</div></div>))}
-              </div>
-            </div>
-            <div className="relative"><div className="bg-white rounded-3xl p-8 shadow-xl"><img src="https://images.unsplash.com/photo-1566073771259-6a8506099945?w=600&q=80" alt="Luxury hotel lobby with elegant design and warm lighting" className="w-full rounded-2xl"/></div></div>
-          </div>
-        </section>
-        <section id="services" aria-labelledby="services-heading" className="py-24 bg-white">
-          <div className="max-w-7xl mx-auto px-6">
-            <div className="text-center mb-16"><p className="text-slate-600 text-sm font-medium mb-4">WHAT WE DO</p><h2 id="services-heading" className="text-4xl font-bold text-slate-900 mb-4">Consulting Services</h2></div>
-            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-              {services.map((s,i) => (<article key={i} className="bg-slate-50 rounded-2xl p-6 hover:shadow-lg transition-all hover:scale-105"><div className="text-4xl mb-4" aria-hidden="true">{s.icon}</div><h3 className="text-xl font-bold text-slate-900 mb-2">{s.title}</h3><p className="text-gray-500 text-sm">{s.desc}</p></article>))}
-            </div>
-          </div>
-        </section>
-        <section id="contact" aria-labelledby="contact-heading" className="py-24">
-          <div className="max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-16">
-            <div><p className="text-slate-600 text-sm font-medium mb-4">GET STARTED</p><h2 id="contact-heading" className="text-4xl font-bold text-slate-900 mb-6">Book Your Strategy Session</h2><p className="text-gray-600 mb-8">60-minute deep dive into your hospitality challenges and opportunities.</p></div>
-            <div className="bg-white rounded-2xl shadow-xl p-8">
-              <form onSubmit={(e) => { e.preventDefault(); setSubmitted(true); setTimeout(() => setSubmitted(false), 3000); }} noValidate className="space-y-6">
-                <div><label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-2">Your Name</label><input id="name" type="text" aria-required="true" placeholder="Alex Hotelier" className="w-full border border-gray-200 rounded-xl px-4 py-3 text-gray-900 focus:border-slate-500 focus:ring-2 focus:ring-slate-200 focus:outline-none transition-colors"/></div>
-                <div><label htmlFor="business" className="block text-sm font-medium text-gray-700 mb-2">Business Type</label><select id="business" className="w-full border border-gray-200 rounded-xl px-4 py-3 text-gray-900 focus:border-slate-500 focus:ring-2 focus:ring-slate-200 focus:outline-none transition-colors"><option value="">Select type</option><option value="hotel">Hotel</option><option value="resort">Resort</option><option value="restaurant">Restaurant</option><option value="other">Other</option></select></div>
-                <button type="submit" aria-label="Book your strategy session" className="w-full bg-slate-800 text-white py-4 rounded-xl font-medium hover:bg-slate-900 transition-all hover:scale-[1.02] focus-visible:outline-2 focus-visible:outline-slate-500 focus-visible:outline-offset-2">Book Session</button>
-              {submitted && <p className="text-center text-green-500 text-sm mt-2 animate-pulse">Sent! We will be in touch soon.</p>}
-              </form>
-            </div>
-          </div>
-        </section>
-      
-        
-        {/* Testimonials */}
-        <section className="py-24" aria-labelledby="testimonials-heading">
-          <div className="max-w-4xl mx-auto px-6">
-            <div className="text-center mb-12">
-              <h2 id="testimonials-heading" className="text-3xl md:text-4xl font-bold mb-4">What people are saying</h2>
-              <p className="text-current/60">Real feedback from real clients.</p>
-            </div>
-            <div className="grid md:grid-cols-3 gap-6">
-              {[
-            {name: 'Robert Chen', text: 'Revenue up 34% within 6 months of implementing their recommendations.'},
-            {name: 'Sarah Mitchell', text: 'They transformed our guest experience scores from 3.8 to 4.7 stars.'},
-            {name: 'David Park', text: 'The training program completely changed our team culture. Retention is up 40%.'}
-              ].map((t, i) => (
-                <div key={i} className="rounded-xl p-6 border border-current/10">
-                  <p className="mb-4 italic text-sm leading-relaxed">&ldquo;{t.text}&rdquo;</p>
-                  <div className="font-medium text-sm">{t.name}</div>
-                </div>
-              ))}
-            </div>
-          </div>
-        </section>
-
-        
-        {/* Gallery Section */}
-        <section className="py-24" aria-labelledby="gallery-heading">
+      <main id="main" role="main">
+        <section className="pt-28 pb-20 md:pb-32">
           <div className="max-w-6xl mx-auto px-6">
-            <div className="text-center mb-12">
-              <h2 id="gallery-heading" className="text-3xl md:text-4xl font-bold mb-4">Our Work</h2>
-              <p className="text-current/60">A selection of recent projects.</p>
+            <div className="max-w-3xl">
+              <p className="text-teal-400 text-sm tracking-widest uppercase mb-6">Est. 2012</p>
+              <h2 className="text-5xl md:text-7xl font-bold leading-[0.9] tracking-tight mb-8 whitespace-pre-line">
+                Elevate every
+guest experience.
+              </h2>
+              <p className="text-xl text-slate-400 max-w-xl leading-relaxed mb-10">
+                Strategic consulting for hotels, restaurants, and hospitality brands seeking operational excellence.
+              </p>
+              <div className="flex flex-wrap gap-4">
+                <button onClick={() => scrollTo('contact')} className="bg-teal-400 text-black px-8 py-4 text-lg font-medium rounded-full hover:opacity-90 transition-opacity">
+                  Book Consultation
+                </button>
+                <button onClick={() => scrollTo('services')} className="border-2 border-current/20 px-8 py-4 text-lg font-medium rounded-full hover:bg-current/5 transition-colors">
+                  Case Studies
+                </button>
+              </div>
             </div>
-            <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
-              {[
-          {title: 'Before & After', img: 'https://images.unsplash.com/photo-1581578731548-c64695cc6952?w=400&q=80', desc: 'Complete renovation project'},
-          {title: 'Residential Job', img: 'https://images.unsplash.com/photo-1558618666-fcd25c85f82e?w=400&q=80', desc: 'Professional service delivery'},
-          {title: 'Commercial Project', img: 'https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=400&q=80', desc: 'Large-scale commercial work'},
-          {title: 'Emergency Call', img: 'https://images.unsplash.com/photo-1621905252507-b35492cc74b4?w=400&q=80', desc: 'Same-day emergency response'},
-          {title: 'Custom Solution', img: 'https://images.unsplash.com/photo-1585128792020-803d29415281?w=400&q=80', desc: 'Tailored to client needs'},
-          {title: 'Team in Action', img: 'https://images.unsplash.com/photo-1504384308090-c894fdcc538d?w=400&q=80', desc: 'Our expert team at work'}
-              ].map((item, i) => (
-                <div key={i} className="group relative aspect-square rounded-xl overflow-hidden cursor-pointer">
-                  <img src={item.img} alt={item.title} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy" />
-                  <div className="absolute inset-0 bg-black/0 group-hover:bg-black/40 transition-colors flex items-end">
-                    <div className="p-4 text-white opacity-0 group-hover:opacity-100 transition-opacity">
-                      <div className="font-bold text-sm">{item.title}</div>
-                      <div className="text-xs text-white/70">{item.desc}</div>
-                    </div>
-                  </div>
-                </div>
-              ))}
+            <div className="mt-16 grid grid-cols-3 gap-8 max-w-lg">
+            <div className="text-center">
+              <div className="text-3xl md:text-4xl font-bold text-teal-400">200+</div>
+              <div className="text-sm text-slate-400 mt-1">Hotels served</div>
+            </div>
+            <div className="text-center">
+              <div className="text-3xl md:text-4xl font-bold text-teal-400">$50M+</div>
+              <div className="text-sm text-slate-400 mt-1">Revenue generated</div>
+            </div>
+            <div className="text-center">
+              <div className="text-3xl md:text-4xl font-bold text-teal-400">40+</div>
+              <div className="text-sm text-slate-400 mt-1">Countries</div>
+            </div>
             </div>
           </div>
         </section>
 
-        {/* FAQ Section */}
-        <section className="py-24" aria-labelledby="faq-heading">
+        <section id="services" className="py-24" aria-labelledby="services-heading">
+          <div className="max-w-6xl mx-auto px-6">
+            <div className="text-center mb-16">
+              <p className="text-teal-400 text-sm tracking-widest uppercase mb-3">What We Offer</p>
+              <h2 id="services-heading" className="text-4xl md:text-5xl font-bold">Our Services</h2>
+            </div>
+            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <article className="bg-slate-900 border border-slate-800 rounded-2xl p-8 hover:shadow-xl transition-all duration-300 group">
+              <div className="text-4xl mb-4" aria-hidden="true">📊</div>
+              <h3 className="text-xl font-bold mb-3 text-slate-100">Operations</h3>
+              <p className="text-slate-400 leading-relaxed">Efficiency audits and SOPs.</p>
+            </article>
+            <article className="bg-slate-900 border border-slate-800 rounded-2xl p-8 hover:shadow-xl transition-all duration-300 group">
+              <div className="text-4xl mb-4" aria-hidden="true">📈</div>
+              <h3 className="text-xl font-bold mb-3 text-slate-100">Revenue Mgmt</h3>
+              <p className="text-slate-400 leading-relaxed">Pricing strategy and yield optimization.</p>
+            </article>
+            <article className="bg-slate-900 border border-slate-800 rounded-2xl p-8 hover:shadow-xl transition-all duration-300 group">
+              <div className="text-4xl mb-4" aria-hidden="true">🎯</div>
+              <h3 className="text-xl font-bold mb-3 text-slate-100">Brand Strategy</h3>
+              <p className="text-slate-400 leading-relaxed">Positioning and guest experience design.</p>
+            </article>
+            <article className="bg-slate-900 border border-slate-800 rounded-2xl p-8 hover:shadow-xl transition-all duration-300 group">
+              <div className="text-4xl mb-4" aria-hidden="true">👥</div>
+              <h3 className="text-xl font-bold mb-3 text-slate-100">Staff Training</h3>
+              <p className="text-slate-400 leading-relaxed">Service excellence programs.</p>
+            </article>
+            <article className="bg-slate-900 border border-slate-800 rounded-2xl p-8 hover:shadow-xl transition-all duration-300 group">
+              <div className="text-4xl mb-4" aria-hidden="true">💡</div>
+              <h3 className="text-xl font-bold mb-3 text-slate-100">Concept Dev</h3>
+              <p className="text-slate-400 leading-relaxed">New restaurant and hotel concepts.</p>
+            </article>
+            <article className="bg-slate-900 border border-slate-800 rounded-2xl p-8 hover:shadow-xl transition-all duration-300 group">
+              <div className="text-4xl mb-4" aria-hidden="true">💻</div>
+              <h3 className="text-xl font-bold mb-3 text-slate-100">Tech Integration</h3>
+              <p className="text-slate-400 leading-relaxed">PMS, POS, and CRM systems.</p>
+            </article>
+            </div>
+          </div>
+        </section>
+
+        <section id="team" className="py-24 bg-slate-900" aria-labelledby="team-heading">
+          <div className="max-w-6xl mx-auto px-6">
+            <div className="text-center mb-16">
+              <p className="text-teal-400 text-sm tracking-widest uppercase mb-3">Our Team</p>
+              <h2 id="team-heading" className="text-4xl md:text-5xl font-bold">Meet the experts</h2>
+            </div>
+            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+            <div className="bg-slate-900 border border-slate-800 rounded-2xl p-6 text-center">
+              <div className="w-20 h-20 mx-auto mb-4 rounded-full bg-teal-400/20 flex items-center justify-center text-2xl font-bold text-teal-400">MT</div>
+              <h3 className="font-bold text-slate-100">Michael Torres</h3>
+              <p className="text-sm text-teal-400">Managing Director</p>
+              <p className="text-sm text-slate-400 mt-1">30yr hospitality</p>
+            </div>
+            <div className="bg-slate-900 border border-slate-800 rounded-2xl p-6 text-center">
+              <div className="w-20 h-20 mx-auto mb-4 rounded-full bg-teal-400/20 flex items-center justify-center text-2xl font-bold text-teal-400">SC</div>
+              <h3 className="font-bold text-slate-100">Sarah Chen</h3>
+              <p className="text-sm text-teal-400">Revenue Lead</p>
+              <p className="text-sm text-slate-400 mt-1">Ex-Marriott</p>
+            </div>
+            <div className="bg-slate-900 border border-slate-800 rounded-2xl p-6 text-center">
+              <div className="w-20 h-20 mx-auto mb-4 rounded-full bg-teal-400/20 flex items-center justify-center text-2xl font-bold text-teal-400">DK</div>
+              <h3 className="font-bold text-slate-100">David Kim</h3>
+              <p className="text-sm text-teal-400">Brand Strategist</p>
+              <p className="text-sm text-slate-400 mt-1">Ex-Starwood</p>
+            </div>
+            <div className="bg-slate-900 border border-slate-800 rounded-2xl p-6 text-center">
+              <div className="w-20 h-20 mx-auto mb-4 rounded-full bg-teal-400/20 flex items-center justify-center text-2xl font-bold text-teal-400">LP</div>
+              <h3 className="font-bold text-slate-100">Lisa Park</h3>
+              <p className="text-sm text-teal-400">Training Director</p>
+              <p className="text-sm text-slate-400 mt-1">CHRE certified</p>
+            </div>
+            </div>
+          </div>
+        </section>
+
+        <section id="faq" className="py-24" aria-labelledby="faq-heading">
           <div className="max-w-4xl mx-auto px-6">
             <div className="text-center mb-12">
-              <h2 id="faq-heading" className="text-3xl md:text-4xl font-bold mb-4">Frequently Asked Questions</h2>
-              <p className="text-current/60">Everything you need to know.</p>
+              <p className="text-teal-400 text-sm tracking-widest uppercase mb-3">Questions</p>
+              <h2 id="faq-heading" className="text-4xl md:text-5xl font-bold">FAQ</h2>
             </div>
             <div className="space-y-4">
-              {[
-          {question: 'How do I schedule an appointment?', answer: 'Call us, text us, or fill out the contact form. We typically respond within 1 hour during business hours.'},
-          {question: 'Are you licensed and insured?', answer: 'Yes. We are fully licensed, bonded, and carry comprehensive liability insurance.'},
-          {question: 'Do you offer free estimates?', answer: 'Yes. We provide free, no-obligation estimates for all services. Call or fill out our form to get started.'},
-          {question: 'What areas do you serve?', answer: 'We serve the entire metro area. Contact us to confirm service availability in your specific location.'}
-              ].map((faq, i) => (
-                <details key={i} className="group border border-current/10 rounded-xl p-5 [&_summary]:cursor-pointer">
-                  <summary className="font-medium flex justify-between items-center list-none">
-                    {faq.question}
-                    <span className="ml-4 text-current/40 group-open:rotate-45 transition-transform">+</span>
-                  </summary>
-                  <p className="mt-3 text-current/60 text-sm leading-relaxed">{faq.answer}</p>
-                </details>
-              ))}
+            <details className="group border border-current/10 rounded-xl p-5 cursor-pointer">
+              <summary className="font-medium flex justify-between items-center list-none text-slate-100">
+                Client size?
+                <span className="ml-4 text-slate-400 group-open:rotate-45 transition-transform text-xl">+</span>
+              </summary>
+              <p className="mt-3 text-slate-400 text-sm leading-relaxed">Boutique hotels to international chains.</p>
+            </details>
+            <details className="group border border-current/10 rounded-xl p-5 cursor-pointer">
+              <summary className="font-medium flex justify-between items-center list-none text-slate-100">
+                Duration?
+                <span className="ml-4 text-slate-400 group-open:rotate-45 transition-transform text-xl">+</span>
+              </summary>
+              <p className="mt-3 text-slate-400 text-sm leading-relaxed">3-12 month engagements typical.</p>
+            </details>
+            <details className="group border border-current/10 rounded-xl p-5 cursor-pointer">
+              <summary className="font-medium flex justify-between items-center list-none text-slate-100">
+                Results?
+                <span className="ml-4 text-slate-400 group-open:rotate-45 transition-transform text-xl">+</span>
+              </summary>
+              <p className="mt-3 text-slate-400 text-sm leading-relaxed">Average 22% revenue increase in year one.</p>
+            </details>
+            </div>
+          </div>
+        </section>
+
+        <section id="contact" className="py-24 bg-slate-900" aria-labelledby="contact-heading">
+          <div className="max-w-6xl mx-auto px-6">
+            <div className="grid md:grid-cols-2 gap-12">
+              <div>
+                <p className="text-teal-400 text-sm tracking-widest uppercase mb-3">Get In Touch</p>
+                <h2 id="contact-heading" className="text-4xl md:text-5xl font-bold mb-6">Book Consultation</h2>
+                <div className="space-y-6 text-slate-400">
+                  <div>
+                    <div className="font-bold text-slate-100">Phone</div>
+                    <a href="tel:(555) 678-9013" className="hover:text-teal-400 transition-colors">(555) 678-9013</a>
+                  </div>
+                  <div>
+                    <div className="font-bold text-slate-100">Address</div>
+                    <p className="whitespace-pre-line">500 Hospitality Row, Miami, FL</p>
+                  </div>
+                  <div>
+                    <div className="font-bold text-slate-100">Hours</div>
+                    <p>Mon–Fri 9 AM – 6 PM</p>
+                  </div>
+                </div>
+              </div>
+              <div>
+                <form className="space-y-5" onSubmit={(e) => { e.preventDefault(); setSubmitted(true); setTimeout(() => setSubmitted(false), 3000); }} aria-label="Contact form">
+                  <div className="grid md:grid-cols-2 gap-5">
+                    <div>
+                      <label htmlFor="name" className="block text-sm font-medium mb-2">Full Name</label>
+                      <input id="name" type="text" placeholder="John Smith" required className="w-full border border-current/20 rounded-xl px-4 py-3 bg-transparent placeholder:opacity-50 focus:outline-none focus:ring-2 focus:ring-current/20" />
+                    </div>
+                    <div>
+                      <label htmlFor="email" className="block text-sm font-medium mb-2">Email</label>
+                      <input id="email" type="email" placeholder="john@example.com" required className="w-full border border-current/20 rounded-xl px-4 py-3 bg-transparent placeholder:opacity-50 focus:outline-none focus:ring-2 focus:ring-current/20" />
+                    </div>
+                  </div>
+                  <div>
+                    <label htmlFor="message" className="block text-sm font-medium mb-2">Message</label>
+                    <textarea id="message" rows={4} placeholder="How can we help?" required className="w-full border border-current/20 rounded-xl px-4 py-3 bg-transparent placeholder:opacity-50 focus:outline-none focus:ring-2 focus:ring-current/20 resize-none" />
+                  </div>
+                  <button type="submit" className="w-full bg-teal-400 text-black py-4 rounded-xl font-medium hover:opacity-90 transition-opacity">
+                    {submitted ? "Sent! We'll be in touch." : "Book Consultation"}
+                  </button>
+                </form>
+              </div>
             </div>
           </div>
         </section>
       </main>
-      <footer role="contentinfo" className="py-12 bg-slate-900"><div className="max-w-7xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-6"><div className="flex items-center gap-3"><div className="w-8 h-8 bg-slate-700 rounded-lg flex items-center justify-center text-white font-bold" aria-hidden="true">E</div><span className="text-white font-bold">Elevate Hospitality</span></div><p className="text-slate-400 text-sm">Transforming hospitality since 2011</p>
-            <div className="flex gap-4 text-sm">
-              <a href="#" className="hover:underline">Twitter</a>
-              <a href="#" className="hover:underline">LinkedIn</a>
-              <a href="#" className="hover:underline">Instagram</a>
-            </div>
-          </div></footer>
+
+      <footer className="bg-slate-900 border-t border-current/10 py-12">
+        <div className="max-w-6xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-6">
+          <div>
+            <div className="font-bold text-lg">Apex Hospitality</div>
+            <p className="text-sm text-slate-400">Est. 2012</p>
+          </div>
+          <p className="text-sm text-slate-400">&copy; 2026 Apex Hospitality. All rights reserved.</p>
+        </div>
+      </footer>
     </div>
   );
 }
