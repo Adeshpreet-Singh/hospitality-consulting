@@ -1,20 +1,5 @@
 @import "tailwindcss";
-
-@theme {
-  --color-navy: #0d1b2a;
-  --color-navy-light: #1b2d45;
-  --color-gold: #c9a959;
-  --color-gold-light: #dcc07a;
-  --color-ivory: #f8f6f1;
-  --color-parchment: #efeadf;
-  --color-slate: #64748b;
-  --color-rule: #d4cfc4;
-}
-
 html { scroll-behavior: smooth; }
-body { background-color: var(--color-ivory); color: var(--color-navy); font-family: Georgia, serif; }
-.card-exec { transition: transform 0.3s, box-shadow 0.3s; border: 1px solid var(--color-rule); }
-.card-exec:hover { transform: translateY(-4px); box-shadow: 0 12px 40px rgba(13,27,42,0.08); }
-.pull-quote { border-left: 3px solid var(--color-gold); padding-left: 1.5rem; font-style: italic; }
-:focus-visible { outline: 2px solid var(--color-gold); outline-offset: 2px; }
+body { background: #09090b; color: #fafafa; font-family: system-ui, sans-serif; }
+:focus-visible { outline: 2px solid #0d9488; outline-offset: 2px; }
 @media (prefers-reduced-motion: reduce) { *, *::before, *::after { transition-duration: 0.01ms !important; } }

@@ -76,18 +76,9 @@ guest experience.
               </div>
             </div>
             <div className="mt-16 grid grid-cols-3 gap-8 max-w-lg">
-            <div className="text-center">
-              <div className="text-3xl md:text-4xl font-bold text-teal-400">200+</div>
-              <div className="text-sm text-slate-400 mt-1">Hotels served</div>
-            </div>
-            <div className="text-center">
-              <div className="text-3xl md:text-4xl font-bold text-teal-400">$50M+</div>
-              <div className="text-sm text-slate-400 mt-1">Revenue generated</div>
-            </div>
-            <div className="text-center">
-              <div className="text-3xl md:text-4xl font-bold text-teal-400">40+</div>
-              <div className="text-sm text-slate-400 mt-1">Countries</div>
-            </div>
+            <div className="text-center"><div className="text-3xl md:text-4xl font-bold text-teal-400">200+</div><div className="text-sm text-slate-400 mt-1">Hotels served</div></div>
+            <div className="text-center"><div className="text-3xl md:text-4xl font-bold text-teal-400">$50M+</div><div className="text-sm text-slate-400 mt-1">Revenue generated</div></div>
+            <div className="text-center"><div className="text-3xl md:text-4xl font-bold text-teal-400">40+</div><div className="text-sm text-slate-400 mt-1">Countries</div></div>
             </div>
           </div>
         </section>
@@ -99,36 +90,30 @@ guest experience.
               <h2 id="services-heading" className="text-4xl md:text-5xl font-bold">Our Services</h2>
             </div>
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-            <article className="bg-slate-900 border border-slate-800 rounded-2xl p-8 hover:shadow-xl transition-all duration-300 group">
-              <div className="text-4xl mb-4" aria-hidden="true">📊</div>
+            <article className="bg-slate-900 border border-slate-800 rounded-2xl p-8 hover:shadow-xl transition-all duration-300">
+              <div className="text-4xl mb-4">📊</div>
               <h3 className="text-xl font-bold mb-3 text-slate-100">Operations</h3>
-              <p className="text-slate-400 leading-relaxed">Efficiency audits and SOPs.</p>
-            </article>
-            <article className="bg-slate-900 border border-slate-800 rounded-2xl p-8 hover:shadow-xl transition-all duration-300 group">
-              <div className="text-4xl mb-4" aria-hidden="true">📈</div>
+              <p className="text-slate-400 leading-relaxed">Efficiency audits and SOPs.</p></article>
+            <article className="bg-slate-900 border border-slate-800 rounded-2xl p-8 hover:shadow-xl transition-all duration-300">
+              <div className="text-4xl mb-4">📈</div>
               <h3 className="text-xl font-bold mb-3 text-slate-100">Revenue Mgmt</h3>
-              <p className="text-slate-400 leading-relaxed">Pricing strategy and yield optimization.</p>
-            </article>
-            <article className="bg-slate-900 border border-slate-800 rounded-2xl p-8 hover:shadow-xl transition-all duration-300 group">
-              <div className="text-4xl mb-4" aria-hidden="true">🎯</div>
+              <p className="text-slate-400 leading-relaxed">Pricing strategy and yield optimization.</p></article>
+            <article className="bg-slate-900 border border-slate-800 rounded-2xl p-8 hover:shadow-xl transition-all duration-300">
+              <div className="text-4xl mb-4">🎯</div>
               <h3 className="text-xl font-bold mb-3 text-slate-100">Brand Strategy</h3>
-              <p className="text-slate-400 leading-relaxed">Positioning and guest experience design.</p>
-            </article>
-            <article className="bg-slate-900 border border-slate-800 rounded-2xl p-8 hover:shadow-xl transition-all duration-300 group">
-              <div className="text-4xl mb-4" aria-hidden="true">👥</div>
+              <p className="text-slate-400 leading-relaxed">Positioning and guest experience design.</p></article>
+            <article className="bg-slate-900 border border-slate-800 rounded-2xl p-8 hover:shadow-xl transition-all duration-300">
+              <div className="text-4xl mb-4">👥</div>
               <h3 className="text-xl font-bold mb-3 text-slate-100">Staff Training</h3>
-              <p className="text-slate-400 leading-relaxed">Service excellence programs.</p>
-            </article>
-            <article className="bg-slate-900 border border-slate-800 rounded-2xl p-8 hover:shadow-xl transition-all duration-300 group">
-              <div className="text-4xl mb-4" aria-hidden="true">💡</div>
+              <p className="text-slate-400 leading-relaxed">Service excellence programs.</p></article>
+            <article className="bg-slate-900 border border-slate-800 rounded-2xl p-8 hover:shadow-xl transition-all duration-300">
+              <div className="text-4xl mb-4">💡</div>
               <h3 className="text-xl font-bold mb-3 text-slate-100">Concept Dev</h3>
-              <p className="text-slate-400 leading-relaxed">New restaurant and hotel concepts.</p>
-            </article>
-            <article className="bg-slate-900 border border-slate-800 rounded-2xl p-8 hover:shadow-xl transition-all duration-300 group">
-              <div className="text-4xl mb-4" aria-hidden="true">💻</div>
+              <p className="text-slate-400 leading-relaxed">New restaurant and hotel concepts.</p></article>
+            <article className="bg-slate-900 border border-slate-800 rounded-2xl p-8 hover:shadow-xl transition-all duration-300">
+              <div className="text-4xl mb-4">💻</div>
               <h3 className="text-xl font-bold mb-3 text-slate-100">Tech Integration</h3>
-              <p className="text-slate-400 leading-relaxed">PMS, POS, and CRM systems.</p>
-            </article>
+              <p className="text-slate-400 leading-relaxed">PMS, POS, and CRM systems.</p></article>
             </div>
           </div>
         </section>
@@ -142,28 +127,16 @@ guest experience.
             <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
             <div className="bg-slate-900 border border-slate-800 rounded-2xl p-6 text-center">
               <div className="w-20 h-20 mx-auto mb-4 rounded-full bg-teal-400/20 flex items-center justify-center text-2xl font-bold text-teal-400">MT</div>
-              <h3 className="font-bold text-slate-100">Michael Torres</h3>
-              <p className="text-sm text-teal-400">Managing Director</p>
-              <p className="text-sm text-slate-400 mt-1">30yr hospitality</p>
-            </div>
+              <h3 className="font-bold text-slate-100">Michael Torres</h3><p className="text-sm text-teal-400">Managing Director</p><p className="text-sm text-slate-400 mt-1">30yr hospitality</p></div>
             <div className="bg-slate-900 border border-slate-800 rounded-2xl p-6 text-center">
               <div className="w-20 h-20 mx-auto mb-4 rounded-full bg-teal-400/20 flex items-center justify-center text-2xl font-bold text-teal-400">SC</div>
-              <h3 className="font-bold text-slate-100">Sarah Chen</h3>
-              <p className="text-sm text-teal-400">Revenue Lead</p>
-              <p className="text-sm text-slate-400 mt-1">Ex-Marriott</p>
-            </div>
+              <h3 className="font-bold text-slate-100">Sarah Chen</h3><p className="text-sm text-teal-400">Revenue Lead</p><p className="text-sm text-slate-400 mt-1">Ex-Marriott</p></div>
             <div className="bg-slate-900 border border-slate-800 rounded-2xl p-6 text-center">
               <div className="w-20 h-20 mx-auto mb-4 rounded-full bg-teal-400/20 flex items-center justify-center text-2xl font-bold text-teal-400">DK</div>
-              <h3 className="font-bold text-slate-100">David Kim</h3>
-              <p className="text-sm text-teal-400">Brand Strategist</p>
-              <p className="text-sm text-slate-400 mt-1">Ex-Starwood</p>
-            </div>
+              <h3 className="font-bold text-slate-100">David Kim</h3><p className="text-sm text-teal-400">Brand Strategist</p><p className="text-sm text-slate-400 mt-1">Ex-Starwood</p></div>
             <div className="bg-slate-900 border border-slate-800 rounded-2xl p-6 text-center">
               <div className="w-20 h-20 mx-auto mb-4 rounded-full bg-teal-400/20 flex items-center justify-center text-2xl font-bold text-teal-400">LP</div>
-              <h3 className="font-bold text-slate-100">Lisa Park</h3>
-              <p className="text-sm text-teal-400">Training Director</p>
-              <p className="text-sm text-slate-400 mt-1">CHRE certified</p>
-            </div>
+              <h3 className="font-bold text-slate-100">Lisa Park</h3><p className="text-sm text-teal-400">Training Director</p><p className="text-sm text-slate-400 mt-1">CHRE certified</p></div>
             </div>
           </div>
         </section>
@@ -176,26 +149,14 @@ guest experience.
             </div>
             <div className="space-y-4">
             <details className="group border border-current/10 rounded-xl p-5 cursor-pointer">
-              <summary className="font-medium flex justify-between items-center list-none text-slate-100">
-                Client size?
-                <span className="ml-4 text-slate-400 group-open:rotate-45 transition-transform text-xl">+</span>
-              </summary>
-              <p className="mt-3 text-slate-400 text-sm leading-relaxed">Boutique hotels to international chains.</p>
-            </details>
+              <summary className="font-medium flex justify-between items-center list-none text-slate-100">Client size?<span className="ml-4 text-slate-400 group-open:rotate-45 transition-transform text-xl">+</span></summary>
+              <p className="mt-3 text-slate-400 text-sm leading-relaxed">Boutique hotels to international chains.</p></details>
             <details className="group border border-current/10 rounded-xl p-5 cursor-pointer">
-              <summary className="font-medium flex justify-between items-center list-none text-slate-100">
-                Duration?
-                <span className="ml-4 text-slate-400 group-open:rotate-45 transition-transform text-xl">+</span>
-              </summary>
-              <p className="mt-3 text-slate-400 text-sm leading-relaxed">3-12 month engagements typical.</p>
-            </details>
+              <summary className="font-medium flex justify-between items-center list-none text-slate-100">Duration?<span className="ml-4 text-slate-400 group-open:rotate-45 transition-transform text-xl">+</span></summary>
+              <p className="mt-3 text-slate-400 text-sm leading-relaxed">3-12 month engagements typical.</p></details>
             <details className="group border border-current/10 rounded-xl p-5 cursor-pointer">
-              <summary className="font-medium flex justify-between items-center list-none text-slate-100">
-                Results?
-                <span className="ml-4 text-slate-400 group-open:rotate-45 transition-transform text-xl">+</span>
-              </summary>
-              <p className="mt-3 text-slate-400 text-sm leading-relaxed">Average 22% revenue increase in year one.</p>
-            </details>
+              <summary className="font-medium flex justify-between items-center list-none text-slate-100">Results?<span className="ml-4 text-slate-400 group-open:rotate-45 transition-transform text-xl">+</span></summary>
+              <p className="mt-3 text-slate-400 text-sm leading-relaxed">Average 22% revenue increase in year one.</p></details>
             </div>
           </div>
         </section>
@@ -207,18 +168,9 @@ guest experience.
                 <p className="text-teal-400 text-sm tracking-widest uppercase mb-3">Get In Touch</p>
                 <h2 id="contact-heading" className="text-4xl md:text-5xl font-bold mb-6">Book Consultation</h2>
                 <div className="space-y-6 text-slate-400">
-                  <div>
-                    <div className="font-bold text-slate-100">Phone</div>
-                    <a href="tel:(555) 678-9013" className="hover:text-teal-400 transition-colors">(555) 678-9013</a>
-                  </div>
-                  <div>
-                    <div className="font-bold text-slate-100">Address</div>
-                    <p className="whitespace-pre-line">500 Hospitality Row, Miami, FL</p>
-                  </div>
-                  <div>
-                    <div className="font-bold text-slate-100">Hours</div>
-                    <p>Mon–Fri 9 AM – 6 PM</p>
-                  </div>
+                  <div><div className="font-bold text-slate-100">Phone</div><a href="tel:(555) 678-9013" className="hover:text-teal-400">(555) 678-9013</a></div>
+                  <div><div className="font-bold text-slate-100">Address</div><p>500 Hospitality Row, Miami, FL</p></div>
+                  <div><div className="font-bold text-slate-100">Hours</div><p>Mon–Fri 9 AM – 6 PM</p></div>
                 </div>
               </div>
               <div>
