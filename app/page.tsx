@@ -38,7 +38,7 @@ export default function Home() {
             </div>
           </div>
         </section>
-        <section id="services" className="py-24 px-8" style={{ background: 'rgba(255,255,255,0.02)' }}>
+        <section id="services" className="reveal py-24 px-8" style={{ background: 'rgba(255,255,255,0.02)' }}>
           <div className="max-w-5xl mx-auto">
             <p className="text-xs tracking-[0.4em] uppercase mb-3" style={{ color: 'var(--gold)' }}>What We Do</p>
             <h2 className="heading-corp text-4xl mb-12">Services</h2>
@@ -52,7 +52,7 @@ export default function Home() {
             </div>
           </div>
         </section>
-        <section id="results" className="py-24 px-8">
+        <section id="results" className="reveal py-24 px-8">
           <div className="max-w-5xl mx-auto">
             <p className="text-xs tracking-[0.4em] uppercase mb-3" style={{ color: 'var(--gold)' }}>Results</p>
             <h2 className="heading-corp text-4xl mb-12">Case Studies</h2>
@@ -70,7 +70,7 @@ export default function Home() {
             </div>
           </div>
         </section>
-        <section id="contact" className="py-24 px-8" style={{ background: 'rgba(255,255,255,0.02)' }}>
+        <section id="contact" className="reveal py-24 px-8" style={{ background: 'rgba(255,255,255,0.02)' }}>
           <div className="max-w-4xl mx-auto grid md:grid-cols-2 gap-16">
             <div>
               <p className="text-xs tracking-[0.4em] uppercase mb-3" style={{ color: 'var(--gold)' }}>Partner</p>
