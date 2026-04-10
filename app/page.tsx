@@ -1,106 +1,101 @@
 'use client';
 import { useState } from 'react';
-
+const services = [
+  { name: 'Revenue Management', desc: 'Dynamic pricing strategies, channel management, and demand forecasting. We optimize your RevPAR and reduce OTA dependency.' },
+  { name: 'Operations Consulting', desc: 'Service standard design, staffing optimization, and efficiency audits. We identify where time and money are leaking.' },
+  { name: 'Pre-Opening', desc: 'Full pre-opening support for new hotels and resorts. From FF&E procurement to staff training and soft-opening management.' },
+  { name: 'Brand Strategy', desc: 'Positioning, brand identity, and guest experience design. We help independent hotels compete with branded properties.' },
+  { name: 'Digital Marketing', desc: 'Website optimization, OTA listing management, social media strategy, and reputation management.' },
+  { name: 'Sustainability', desc: 'Green certification guidance, energy audits, waste reduction, and sustainable procurement strategies.' },
+];
+const caseStudies = [
+  { name: 'The Kensington, London', challenge: 'Underperforming 120-room boutique hotel with 58% occupancy and declining RevPAR.', solution: 'Revamped pricing strategy, restructured F&B, launched direct booking campaign, and redesigned guest journey.', result: 'Occupancy to 82%, RevPAR +34%, direct bookings from 12% to 41% in 18 months.', metric: '+34% RevPAR' },
+  { name: 'Sunrise Resort, Bali', challenge: 'New 85-villa resort struggling with pre-opening delays and no brand awareness.', solution: 'Comprehensive pre-opening support, influencer launch campaign, and OTA optimization.', result: 'Sold-out opening month, 4.8 TripAdvisor rating within 6 months, featured in Condé Nast Traveler.', metric: '4.8★ Rating' },
+  { name: 'CityStay Hotels (8 properties)', challenge: 'Regional chain with inconsistent service quality and high staff turnover (45%).', solution: 'Created brand standards manual, redesigned training program, and implemented employee engagement initiatives.', result: 'Staff turnover reduced to 18%, guest satisfaction scores improved 23%, TripAdvisor average improved from 3.8 to 4.5.', metric: '+23% Satisfaction' },
+];
 export default function Home() {
   const [submitted, setSubmitted] = useState(false);
   const scrollTo = (id: string) => document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' });
-
   return (
-    <div className="min-h-screen bg-[#030712] text-gray-100">
-      <a href="#main" className="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 bg-teal-600 text-white px-4 py-2 rounded z-[100] font-bold">Skip</a>
-      <nav className="fixed top-0 left-0 right-0 z-50 bg-[#030712]/95 backdrop-blur-md border-b border-gray-800">
-        <div className="max-w-6xl mx-auto px-6 py-4 flex justify-between items-center">
-          <div><h1 className="text-xl font-bold text-teal-400">Apex Hospitality</h1><p className="text-[10px] tracking-[0.2em] text-gray-500 uppercase">Consulting — Miami</p></div>
-          <div className="hidden md:flex items-center gap-8">
-            <button onClick={() => scrollTo('services')} className="text-sm text-gray-400 hover:text-teal-400">Services</button>
-            <button onClick={() => scrollTo('results')} className="text-sm text-gray-400 hover:text-teal-400">Results</button>
-            <button onClick={() => scrollTo('contact')} className="bg-teal-600 text-white px-5 py-2.5 text-sm rounded-full hover:bg-teal-500">Book Consultation</button>
-          </div>
-        </div>
+    <div className="min-h-screen" style={{ background: 'var(--ink)', color: '#e8e4df' }}>
+      <nav className="sticky top-0 z-50 px-8 py-4 flex justify-between items-center" style={{ background: '#0d1b2aee', backdropFilter: 'blur(12px)', borderBottom: '1px solid rgba(255,255,255,0.08)' }}>
+        <div><h1 className="heading-corp text-xl" style={{ color: 'var(--gold)' }}>Apex Hospitality</h1><p className="text-[9px] tracking-[0.3em] uppercase opacity-40">Group · Advisory</p></div>
+        <div className="hidden md:flex gap-8 text-xs tracking-[0.15em] uppercase opacity-60">{['services', 'results', 'contact'].map(s => <button key={s} onClick={() => scrollTo(s)}>{s}</button>)}</div>
+        <button onClick={() => scrollTo('contact')} className="text-xs tracking-wider uppercase px-5 py-2" style={{ background: 'var(--gold)', color: 'var(--ink)' }}>Contact</button>
       </nav>
-
-      <main id="main">
-        <section className="pt-24 bg-gradient-to-br from-teal-950 via-[#030712] to-cyan-950">
-          <div className="max-w-6xl mx-auto px-6 py-24 md:py-40 text-center">
-            <p className="text-teal-400 text-sm tracking-[0.3em] uppercase mb-6">Hospitality Consulting — Est. 2012</p>
-            <h2 className="text-5xl md:text-7xl font-bold leading-[0.9] mb-6">Elevate every<br />guest <span className="text-teal-400">experience.</span></h2>
-            <p className="text-xl text-gray-400 max-w-xl mx-auto mb-10">Strategic consulting for hotels, restaurants, and hospitality brands seeking operational excellence and revenue growth.</p>
-            <div className="flex justify-center gap-4">
-              <button onClick={() => scrollTo('contact')} className="bg-teal-600 text-white px-8 py-4 text-lg rounded-full hover:bg-teal-500">Book Consultation</button>
-              <button onClick={() => scrollTo('results')} className="border-2 border-gray-600 text-gray-300 px-8 py-4 text-lg rounded-full hover:border-teal-500">Case Studies</button>
+      <main>
+        <section className="py-28 px-8">
+          <div className="max-w-5xl mx-auto">
+            <p className="text-xs tracking-[0.4em] uppercase mb-6" style={{ color: 'var(--gold)' }}>Hotel & Resort Consulting</p>
+            <h2 className="heading-corp text-5xl md:text-7xl mb-8">Elevate every<br/><em style={{ color: 'var(--gold)' }}>guest experience.</em></h2>
+            <p className="text-lg opacity-50 max-w-xl mb-10 leading-relaxed">We help independent hotels and boutique resorts compete with the big brands. Revenue optimization, operational excellence, and guest experience design.</p>
+            <div className="grid grid-cols-3 gap-8 max-w-lg">
+              {[
+                { n: '120+', l: 'Hotels Advised' },
+                { n: '$2.8B', l: 'Revenue Influenced' },
+                { n: '28', l: 'Countries' },
+              ].map(s => <div key={s.l}><p className="heading-corp text-2xl" style={{ color: 'var(--gold)' }}>{s.n}</p><p className="text-xs opacity-40">{s.l}</p></div>)}
             </div>
           </div>
         </section>
-
-        <section className="py-8 border-y border-gray-800">
-          <div className="max-w-6xl mx-auto px-6 grid grid-cols-3 gap-8 text-center">
-            <div><div className="text-3xl font-bold text-teal-400">200+</div><div className="text-xs text-gray-500 uppercase">Hotels Served</div></div>
-            <div><div className="text-3xl font-bold text-teal-400">$50M+</div><div className="text-xs text-gray-500 uppercase">Revenue Generated</div></div>
-            <div><div className="text-3xl font-bold text-teal-400">40+</div><div className="text-xs text-gray-500 uppercase">Countries</div></div>
-          </div>
-        </section>
-
-        <section id="services" className="py-24" aria-labelledby="services-heading">
-          <div className="max-w-6xl mx-auto px-6">
-            <div className="text-center mb-16"><h2 id="services-heading" className="text-4xl font-bold">Services</h2></div>
+        <section id="services" className="py-24 px-8" style={{ background: 'rgba(255,255,255,0.02)' }}>
+          <div className="max-w-5xl mx-auto">
+            <p className="text-xs tracking-[0.4em] uppercase mb-3" style={{ color: 'var(--gold)' }}>What We Do</p>
+            <h2 className="heading-corp text-4xl mb-12">Services</h2>
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-              {[
-                { name: 'Operations', desc: 'Efficiency audits, SOPs, and service standard optimization.', icon: '📊' },
-                { name: 'Revenue Management', desc: 'Pricing strategy, yield optimization, and distribution.', icon: '📈' },
-                { name: 'Brand Strategy', desc: 'Positioning, guest experience design, and storytelling.', icon: '🎯' },
-                { name: 'Staff Training', desc: 'Service excellence programs and leadership development.', icon: '👥' },
-                { name: 'Concept Development', desc: 'New restaurant and hotel concept creation.', icon: '💡' },
-                { name: 'Tech Integration', desc: 'PMS, POS, CRM, and digital transformation.', icon: '💻' },
-              ].map((s, i) => (
-                <div key={i} className="border border-gray-800 rounded-xl p-8 hover:border-teal-500/40 transition-colors">
-                  <div className="text-4xl mb-4">{s.icon}</div>
-                  <h3 className="text-xl font-bold mb-3">{s.name}</h3>
-                  <p className="text-gray-400 text-sm">{s.desc}</p>
+              {services.map(s => (
+                <div key={s.name} className="service-card">
+                  <h3 className="heading-corp text-lg mb-3" style={{ color: 'var(--gold)' }}>{s.name}</h3>
+                  <p className="text-sm opacity-50 leading-relaxed">{s.desc}</p>
                 </div>
               ))}
             </div>
           </div>
         </section>
-
-        <section id="results" className="py-24 bg-gray-900/30" aria-labelledby="results-heading">
-          <div className="max-w-5xl mx-auto px-6">
-            <div className="text-center mb-16"><h2 id="results-heading" className="text-4xl font-bold">Results</h2></div>
-            <div className="space-y-8">
-              {[
-                { title: 'Boutique Hotel Revival', result: '35% RevPAR increase', desc: 'Restructured pricing, redesigned guest journey, and implemented upselling strategy for a 120-room boutique property.' },
-                { title: 'Restaurant Turnaround', result: 'From 2.8 to 4.6 stars', desc: 'Overhauled service training, menu engineering, and online reputation management for a struggling fine dining restaurant.' },
-              ].map((cs, i) => (
-                <div key={i} className="border-l-3 border-teal-500 pl-6">
-                  <div className="text-teal-400 font-bold text-sm mb-1">{cs.result}</div>
-                  <h3 className="text-xl font-bold mb-2">{cs.title}</h3>
-                  <p className="text-gray-400">{cs.desc}</p>
+        <section id="results" className="py-24 px-8">
+          <div className="max-w-5xl mx-auto">
+            <p className="text-xs tracking-[0.4em] uppercase mb-3" style={{ color: 'var(--gold)' }}>Results</p>
+            <h2 className="heading-corp text-4xl mb-12">Case Studies</h2>
+            <div className="space-y-6">
+              {caseStudies.map(c => (
+                <div key={c.name} className="case-study">
+                  <div className="flex justify-between items-start mb-4"><h3 className="heading-corp text-xl">{c.name}</h3><span className="text-sm font-bold px-3 py-1 rounded" style={{ background: 'var(--gold)', color: 'var(--ink)' }}>{c.metric}</span></div>
+                  <div className="grid md:grid-cols-3 gap-4 text-sm">
+                    <div><p className="font-semibold mb-1" style={{ color: 'var(--gold)' }}>Challenge</p><p className="opacity-50">{c.challenge}</p></div>
+                    <div><p className="font-semibold mb-1" style={{ color: 'var(--gold)' }}>Solution</p><p className="opacity-50">{c.solution}</p></div>
+                    <div><p className="font-semibold mb-1" style={{ color: 'var(--gold)' }}>Result</p><p className="opacity-50">{c.result}</p></div>
+                  </div>
                 </div>
               ))}
             </div>
           </div>
         </section>
-
-        <section id="contact" className="py-24">
-          <div className="max-w-2xl mx-auto px-6 text-center">
-            <h2 className="text-4xl font-bold mb-4">Book a Consultation</h2>
-            <p className="text-gray-400 mb-10">Free 60-minute assessment of your property's opportunities.</p>
-            <form className="border border-gray-800 rounded-xl p-8 space-y-5 text-left" onSubmit={(e) => { e.preventDefault(); setSubmitted(true); setTimeout(() => setSubmitted(false), 4000); }}>
-              <div className="grid grid-cols-2 gap-5">
-                <div><label className="block text-sm mb-2 text-gray-400">Name</label><input type="text" placeholder="Your name" required className="w-full border border-gray-700 bg-transparent px-4 py-3 rounded-lg placeholder:text-gray-600 focus:border-teal-500 focus:outline-none" /></div>
-                <div><label className="block text-sm mb-2 text-gray-400">Email</label><input type="email" placeholder="you@hotel.com" required className="w-full border border-gray-700 bg-transparent px-4 py-3 rounded-lg placeholder:text-gray-600 focus:border-teal-500 focus:outline-none" /></div>
-              </div>
-              <div><label className="block text-sm mb-2 text-gray-400">Property Type</label>
-                <select className="w-full border border-gray-700 bg-[#030712] px-4 py-3 rounded-lg focus:border-teal-500 focus:outline-none text-gray-100">
-                  <option>Boutique Hotel</option><option>Hotel Chain</option><option>Restaurant</option><option>Resort</option>
-                </select>
-              </div>
-              <button type="submit" disabled={submitted} className="w-full bg-teal-600 text-white py-4 rounded-lg font-bold hover:bg-teal-500 transition-colors disabled:opacity-60">{submitted ? '✓ Scheduled! We\'ll confirm' : 'Book Consultation'}</button>
-            </form>
+        <section id="contact" className="py-24 px-8" style={{ background: 'rgba(255,255,255,0.02)' }}>
+          <div className="max-w-4xl mx-auto grid md:grid-cols-2 gap-16">
+            <div>
+              <p className="text-xs tracking-[0.4em] uppercase mb-3" style={{ color: 'var(--gold)' }}>Partner</p>
+              <h2 className="heading-corp text-4xl mb-6">Book a Consultation</h2>
+              <p className="opacity-50 leading-relaxed mb-6">Tell us about your property and challenges. We offer a free 30-minute discovery call to see if we are a good fit.</p>
+              <div className="space-y-2 text-sm opacity-50"><p>📍 350 Fifth Avenue, Suite 5100, New York, NY 10118</p><p>📧 <a href="mailto:advisory@apexhospitality.com" style={{ color: 'var(--gold)' }}>advisory@apexhospitality.com</a></p><p>📞 <a href="tel:(212) 555-0210" style={{ color: 'var(--gold)' }}>(212) 555-0210</a></p></div>
+            </div>
+            <div>
+              {submitted ? (
+                <div className="h-full flex items-center"><div><p className="heading-corp text-2xl" style={{ color: 'var(--gold)' }}>Received.</p><p className="opacity-50 text-sm mt-2">A partner will contact you within 48 hours.</p></div></div>
+              ) : (
+                <form onSubmit={e => { e.preventDefault(); setSubmitted(true); }} className="space-y-4">
+                  <input type="text" placeholder="Name" required className="w-full" />
+                  <input type="email" placeholder="Email" required className="w-full" />
+                  <input type="text" placeholder="Hotel/Resort name" className="w-full" />
+                  <select className="w-full"><option value="">Service interest</option>{services.map(s => <option key={s.name}>{s.name}</option>)}</select>
+                  <textarea rows={4} placeholder="Tell us about your property and challenges..." className="w-full" />
+                  <button type="submit" className="w-full py-3 text-xs tracking-wider uppercase" style={{ background: 'var(--gold)', color: 'var(--ink)' }}>Request Consultation</button>
+                </form>
+              )}
+            </div>
           </div>
         </section>
       </main>
-
-      <footer className="border-t border-gray-800 py-8"><div className="max-w-6xl mx-auto px-6 text-center text-gray-600 text-sm">© {new Date().getFullYear()} Apex Hospitality. Miami, FL.</div></footer>
+      <footer className="py-8 text-center text-xs opacity-30"><p>Apex Hospitality Group. New York.</p></footer>
     </div>
   );
 }

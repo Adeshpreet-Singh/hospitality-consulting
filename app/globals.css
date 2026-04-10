@@ -1,5 +1,13 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Inter:wght@300;400;500;600&display=swap');
 @import "tailwindcss";
+:root { --navy: #1a2744; --gold: #c9a959; --ink: #0d1b2a; }
 html { scroll-behavior: smooth; }
-body { background: #030712; color: #f9fafb; font-family: system-ui, sans-serif; }
-:focus-visible { outline: 2px solid #14b8a6; outline-offset: 2px; }
+body { background: var(--ink); color: #e8e4df; font-family: 'Inter', sans-serif; }
+.heading-corp { font-family: 'DM Serif Display', serif; line-height: 1.15; }
+.service-card { background: rgba(255,255,255,0.03); border: 1px solid rgba(201,169,89,0.15); padding: 2rem; transition: all 0.3s; }
+.service-card:hover { border-color: var(--gold); }
+.case-study { background: rgba(255,255,255,0.03); border-radius: 1rem; padding: 2rem; }
+input, textarea, select { background: rgba(255,255,255,0.05) !important; border: 1px solid rgba(255,255,255,0.15) !important; color: #e8e4df !important; padding: 0.75rem 1rem; border-radius: 0.5rem; }
+input:focus, textarea:focus, select:focus { border-color: var(--gold) !important; outline: none; }
 @media (prefers-reduced-motion: reduce) { *, *::before, *::after { transition-duration: 0.01ms !important; } }
+:focus-visible { outline: 2px solid var(--gold); outline-offset: 2px; }
