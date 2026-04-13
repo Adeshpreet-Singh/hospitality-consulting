@@ -177,16 +177,16 @@ export default function Home() {
           <h1 className="heading-corp text-xl" style={{ color: 'var(--gold)' }}>
             Apex Hospitality
           </h1>
-          <p className="text-[9px] tracking-[0.3em] uppercase opacity-70">Group · Advisory</p>
+          <p className="text-base tracking-[0.3em] uppercase opacity-90">Group · Advisory</p>
         </div>
         <div className="hidden lg:flex gap-8 text-xs tracking-[0.15em] uppercase font-medium" style={{ color: '#374151' }}>
           {['services', 'results', 'approach', 'team', 'testimonials', 'faq', 'contact'].map((s) => (
-            <button key={s} onClick={() => scrollTo(s)} aria-label={`Navigate to ${s}`}>
+            <button className="btn" key={s} onClick={() => scrollTo(s)} aria-label={`Navigate to ${s}`}>
               {s}
             </button>
           ))}
         </div>
-        <button
+        <button className="btn"
           onClick={() => scrollTo('contact')}
           aria-label="Book a discovery call"
           className="text-xs tracking-wider uppercase px-5 py-2"
@@ -198,7 +198,7 @@ export default function Home() {
 
       <main role="main">
         {/* Hero */}
-        <section className="py-24 md:py-32 px-6 md:px-8">
+        <section className="py-24 md:py-24 px-6 md:px-8">
           <div className="max-w-5xl mx-auto">
             <p className="text-xs tracking-[0.4em] uppercase mb-6" style={{ color: 'var(--gold)' }}>
               Hotel & Resort Consulting
@@ -213,14 +213,14 @@ export default function Home() {
               Since 2009, we have advised over 120 properties across 28 countries.
             </p>
             <div className="flex flex-wrap gap-4 mb-16">
-              <button
+              <button className="btn"
                 onClick={() => scrollTo('contact')}
                 className="text-sm tracking-wider uppercase px-8 py-3 font-semibold"
                 style={{ background: 'var(--gold)', color: 'var(--ink)' }}
               >
                 Schedule Discovery Call
               </button>
-              <button
+              <button className="btn"
                 onClick={() => scrollTo('results')}
                 className="text-sm tracking-wider uppercase px-8 py-3 font-semibold"
                 style={{ border: '1px solid rgba(255,255,255,0.2)', color: '#e8e4df' }}
@@ -239,7 +239,7 @@ export default function Home() {
                   <p className="heading-corp text-2xl md:text-3xl" style={{ color: 'var(--gold)' }}>
                     {s.n}
                   </p>
-                  <p className="text-xs opacity-70 mt-1">{s.l}</p>
+                  <p className="text-xs opacity-90 mt-1">{s.l}</p>
                 </div>
               ))}
             </div>
@@ -253,7 +253,7 @@ export default function Home() {
               What We Do
             </p>
             <h2 className="heading-corp text-4xl md:text-5xl mb-4">Services</h2>
-            <p className="text-base opacity-70 max-w-2xl mb-14 leading-relaxed">
+            <p className="text-base opacity-90 max-w-2xl mb-14 leading-relaxed">
               Six core practice areas covering every dimension of hospitality performance. Each engagement is tailored
               to your property, your market, and your ambitions.
             </p>
@@ -278,7 +278,7 @@ export default function Home() {
               Proven Results
             </p>
             <h2 className="heading-corp text-4xl md:text-5xl mb-4">Case Studies</h2>
-            <p className="text-base opacity-70 max-w-2xl mb-14 leading-relaxed">
+            <p className="text-base opacity-90 max-w-2xl mb-14 leading-relaxed">
               Real properties, real challenges, measurable outcomes. Here is how we move the needle.
             </p>
             <div className="space-y-8">
@@ -291,7 +291,7 @@ export default function Home() {
                   <div className="flex flex-col md:flex-row justify-between md:items-center mb-6 gap-4">
                     <div>
                       <h3 className="heading-corp text-xl md:text-2xl">{c.name}</h3>
-                      <p className="text-xs opacity-70 mt-1">{c.type}</p>
+                      <p className="text-xs opacity-90 mt-1">{c.type}</p>
                     </div>
                     <span
                       className="text-sm font-bold px-4 py-2 rounded self-start"
@@ -333,7 +333,7 @@ export default function Home() {
               How We Work
             </p>
             <h2 className="heading-corp text-4xl md:text-5xl mb-4">Our Approach</h2>
-            <p className="text-base opacity-70 max-w-2xl mb-14 leading-relaxed">
+            <p className="text-base opacity-90 max-w-2xl mb-14 leading-relaxed">
               A structured four-phase methodology refined over 15 years and 120+ engagements. Rigorous in analysis,
               flexible in execution, relentless in follow-through.
             </p>
@@ -350,7 +350,7 @@ export default function Home() {
                     </span>
                     <div>
                       <h3 className="heading-corp text-lg">{p.name}</h3>
-                      <p className="text-xs opacity-70 mt-1">{p.duration}</p>
+                      <p className="text-xs opacity-90 mt-1">{p.duration}</p>
                     </div>
                   </div>
                   <p className="text-sm opacity-80 leading-relaxed">{p.desc}</p>
@@ -367,7 +367,7 @@ export default function Home() {
               Leadership
             </p>
             <h2 className="heading-corp text-4xl md:text-5xl mb-4">Our Team</h2>
-            <p className="text-base opacity-70 max-w-2xl mb-14 leading-relaxed">
+            <p className="text-base opacity-90 max-w-2xl mb-14 leading-relaxed">
               Senior consultants with deep operator experience. We have sat in the GM chair, run the revenue meeting,
               and led the kitchen. We understand hospitality from the inside.
             </p>
@@ -390,7 +390,7 @@ export default function Home() {
                   <h3 className="heading-corp text-lg" style={{ color: 'var(--gold)' }}>
                     {t.name}
                   </h3>
-                  <p className="text-xs tracking-wider uppercase opacity-70 mb-4">{t.title}</p>
+                  <p className="text-xs tracking-wider uppercase opacity-90 mb-4">{t.title}</p>
                   <p className="text-sm opacity-80 leading-relaxed mb-4">{t.bio}</p>
                   <div className="flex flex-wrap gap-2">
                     {t.specialties.map((sp) => (
@@ -420,7 +420,7 @@ export default function Home() {
               Client Voices
             </p>
             <h2 className="heading-corp text-4xl md:text-5xl mb-4">Testimonials</h2>
-            <p className="text-base opacity-70 max-w-2xl mb-14 leading-relaxed">
+            <p className="text-base opacity-90 max-w-2xl mb-14 leading-relaxed">
               Our clients say it better than we can. Here is what working with Apex feels like.
             </p>
             <div className="grid md:grid-cols-3 gap-8">
@@ -430,15 +430,15 @@ export default function Home() {
                   className="p-6 rounded-lg flex flex-col"
                   style={{ background: 'rgba(255,255,255,0.03)', border: '1px solid rgba(255,255,255,0.06)' }}
                 >
-                  <div className="text-3xl mb-4" style={{ color: 'var(--gold)', opacity: 0.4 }}>
+                  <div className="text-3xl mb-4" style={{ color: 'var(--gold)', opacity: '0.75' }}>
                     &ldquo;
                   </div>
-                  <p className="text-sm opacity-60 leading-relaxed flex-1 mb-6">{t.quote}</p>
+                  <p className="text-sm opacity-85 leading-relaxed flex-1 mb-6">{t.quote}</p>
                   <div>
                     <p className="text-sm font-semibold" style={{ color: 'var(--gold)' }}>
                       {t.author}
                     </p>
-                    <p className="text-xs opacity-70 mt-1">{t.role}</p>
+                    <p className="text-xs opacity-90 mt-1">{t.role}</p>
                   </div>
                 </div>
               ))}
@@ -453,7 +453,7 @@ export default function Home() {
               Common Questions
             </p>
             <h2 className="heading-corp text-4xl md:text-5xl mb-4">FAQ</h2>
-            <p className="text-base opacity-70 max-w-2xl mb-14 leading-relaxed">
+            <p className="text-base opacity-90 max-w-2xl mb-14 leading-relaxed">
               Everything you need to know before starting a conversation with us.
             </p>
             <div className="space-y-3">
@@ -463,7 +463,7 @@ export default function Home() {
                   className="rounded-lg overflow-hidden"
                   style={{ border: '1px solid rgba(255,255,255,0.06)' }}
                 >
-                  <button
+                  <button className="btn"
                     onClick={() => setOpenFaq(openFaq === i ? null : i)}
                     className="w-full text-left px-6 py-5 flex justify-between items-center gap-4"
                     style={{ background: openFaq === i ? 'rgba(255,255,255,0.04)' : 'rgba(255,255,255,0.02)' }}
@@ -555,22 +555,22 @@ export default function Home() {
                   }}
                   className="space-y-4"
                 >
-                  <input type="text" placeholder="Full Name" aria-label="Full name" required className="w-full p-3" style={{ border: '1px solid #ddd', borderRadius: '0.5rem' }} />
-                  <input type="email" placeholder="Email Address" aria-label="Email address" required className="w-full p-3" style={{ border: '1px solid #ddd', borderRadius: '0.5rem' }} />
-                  <input type="text" placeholder="Hotel / Resort Name" aria-label="Hotel or resort name" className="w-full p-3" style={{ border: '1px solid #ddd', borderRadius: '0.5rem' }} />
-                  <select aria-label="" className="w-full p-3" style={{ border: '1px solid #ddd', borderRadius: '0.5rem' }}>
+                  <input type="text" placeholder="Full Name" aria-label="Full name" required className="w-full p-3 border border-gray-300 " style={{ border: '1px solid #ddd', borderRadius: '0.5rem' }} />
+                  <input type="email" placeholder="Email Address" aria-label="Email address" required className="w-full p-3 border border-gray-300 " style={{ border: '1px solid #ddd', borderRadius: '0.5rem' }} />
+                  <input type="text" placeholder="Hotel / Resort Name" aria-label="Hotel or resort name" className="w-full p-3 border border-gray-300 " style={{ border: '1px solid #ddd', borderRadius: '0.5rem' }} />
+                  <select aria-label="" className="w-full p-3 border border-gray-300 " style={{ border: '1px solid #ddd', borderRadius: '0.5rem' }}>
                     <option value="">Service of Interest</option>
                     {services.map((s) => (
                       <option key={s.name}>{s.name}</option>
                     ))}
                   </select>
-                  <input type="text" placeholder="Property Location (City, Country)" aria-label="Property location" className="w-full p-3" style={{ border: '1px solid #ddd', borderRadius: '0.5rem' }} />
-                  <input type="number" placeholder="Number of Rooms" aria-label="Number of rooms" className="w-full p-3" style={{ border: '1px solid #ddd', borderRadius: '0.5rem' }} />
+                  <input type="text" placeholder="Property Location (City, Country)" aria-label="Property location" className="w-full p-3 border border-gray-300 " style={{ border: '1px solid #ddd', borderRadius: '0.5rem' }} />
+                  <input type="number" placeholder="Number of Rooms" aria-label="Number of rooms" className="w-full p-3 border border-gray-300 " style={{ border: '1px solid #ddd', borderRadius: '0.5rem' }} />
                   <textarea
                     rows={5}
                     placeholder="Tell us about your property and the challenges you are facing..."
                     aria-label="Property details and challenges"
-                    className="w-full p-3" style={{ border: '1px solid #ddd', borderRadius: '0.5rem' }}
+                    className="w-full p-3 border border-gray-300 " style={{ border: '1px solid #ddd', borderRadius: '0.5rem' }}
                   />
                   <button
                     type="submit"
@@ -580,7 +580,7 @@ export default function Home() {
                   >
                     Request Free Consultation
                   </button>
-                  <p className="text-xs opacity-30 text-center">
+                  <p className="text-xs opacity-80 text-center">
                     We respect your privacy. Your information is never shared with third parties.
                   </p>
                 </form>
@@ -594,8 +594,8 @@ export default function Home() {
         <p className="heading-corp text-sm mb-2" style={{ color: 'var(--gold)' }}>
           Apex Hospitality Group
         </p>
-        <p className="text-xs opacity-60">New York · London · Singapore · Dubai</p>
-        <p className="text-xs opacity-20 mt-2">© 2026 Apex Hospitality Group. All rights reserved.</p>
+        <p className="text-xs opacity-85">New York · London · Singapore · Dubai</p>
+        <p className="text-xs opacity-80 mt-2">© 2026 Apex Hospitality Group. All rights reserved.</p>
       </footer>
     </div>
   );
