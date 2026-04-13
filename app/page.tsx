@@ -181,12 +181,12 @@ export default function Home() {
         </div>
         <div className="hidden lg:flex gap-8 text-xs tracking-[0.15em] uppercase font-medium">
           {['services', 'results', 'approach', 'team', 'testimonials', 'faq', 'contact'].map((s) => (
-            <button key={s} onClick={() => scrollTo(s)} aria-label={`Navigate to ${s}`} style={{ color: '#c8c4bf', background: 'transparent', border: 'none', padding: '0.5rem 0', cursor: 'pointer', transition: 'color 0.2s' }} onMouseOver={(e) => (e.target as HTMLElement).style.color = '#e8e4df'} onMouseOut={(e) => (e.target as HTMLElement).style.color = '#c8c4bf'}>
+            <button style={{ cursor: "pointer" }} key={s} onClick={() => scrollTo(s)} aria-label={`Navigate to ${s}`} style={{ color: '#c8c4bf', background: 'transparent', border: 'none', padding: '0.5rem 0', cursor: 'pointer', transition: 'color 0.2s' }} onMouseOver={(e) => (e.target as HTMLElement).style.color = '#e8e4df'} onMouseOut={(e) => (e.target as HTMLElement).style.color = '#c8c4bf'}>
               {s}
             </button>
           ))}
         </div>
-        <button className="btn text-xs tracking-wider uppercase px-5 py-2" onClick={() => scrollTo('contact')} aria-label="Book a discovery call" style={{ background: 'var(--gold)', color: 'var(--ink)' }} >
+        <button style={{ cursor: "pointer" }} className="btn text-xs tracking-wider uppercase px-5 py-2" onClick={() => scrollTo('contact')} aria-label="Book a discovery call" style={{ background: 'var(--gold)', color: 'var(--ink)' }} >
           Book a Call
         </button>
       </nav>
@@ -208,10 +208,10 @@ export default function Home() {
               Since 2009, we have advised over 120 properties across 28 countries.
             </p>
             <div className="flex flex-wrap gap-4 mb-16">
-              <button className="btn text-sm tracking-wider uppercase px-8 py-3 font-semibold" onClick={() => scrollTo('contact')} style={{ background: 'var(--gold)', color: 'var(--ink)' }} >
+              <button style={{ cursor: "pointer" }} className="btn text-sm tracking-wider uppercase px-8 py-3 font-semibold" onClick={() => scrollTo('contact')} style={{ background: 'var(--gold)', color: 'var(--ink)' }} >
                 Schedule Discovery Call
               </button>
-              <button className="btn text-sm tracking-wider uppercase px-8 py-3 font-semibold" onClick={() => scrollTo('results')} style={{ border: '1px solid rgba(255,255,255,0.2)', color: '#e8e4df' }} >
+              <button style={{ cursor: "pointer" }} className="btn text-sm tracking-wider uppercase px-8 py-3 font-semibold" onClick={() => scrollTo('results')} style={{ border: '1px solid rgba(255,255,255,0.2)', color: '#e8e4df' }} >
                 View Case Studies
               </button>
             </div>
@@ -226,7 +226,7 @@ export default function Home() {
                   <p className="heading-corp text-2xl md:text-3xl" style={{ color: 'var(--gold)' }}>
                     {s.n}
                   </p>
-                  <p className="text-xs opacity-90 mt-1">{s.l}</p>
+                  <p className="text-sm opacity-90 mt-1">{s.l}</p>
                 </div>
               ))}
             </div>
@@ -281,7 +281,7 @@ export default function Home() {
                   <div className="flex flex-col md:flex-row justify-between md:items-center mb-6 gap-4">
                     <div>
                       <h3 className="heading-corp text-xl md:text-2xl">{c.name}</h3>
-                      <p className="text-xs opacity-90 mt-1">{c.type}</p>
+                      <p className="text-sm opacity-90 mt-1">{c.type}</p>
                     </div>
                     <span
                       className="text-sm font-bold px-4 py-2 rounded self-start"
@@ -340,7 +340,7 @@ export default function Home() {
                     </span>
                     <div>
                       <h3 className="heading-corp text-lg">{p.name}</h3>
-                      <p className="text-xs opacity-90 mt-1">{p.duration}</p>
+                      <p className="text-sm opacity-90 mt-1">{p.duration}</p>
                     </div>
                   </div>
                   <p className="text-sm opacity-80 leading-relaxed">{p.desc}</p>
@@ -380,7 +380,7 @@ export default function Home() {
                   <h3 className="heading-corp text-lg" style={{ color: 'var(--gold)' }}>
                     {t.name}
                   </h3>
-                  <p className="text-xs tracking-wider uppercase opacity-90 mb-4">{t.title}</p>
+                  <p className="text-sm tracking-wider uppercase opacity-90 mb-4">{t.title}</p>
                   <p className="text-sm opacity-80 leading-relaxed mb-4">{t.bio}</p>
                   <div className="flex flex-wrap gap-2">
                     {t.specialties.map((sp) => (
@@ -428,7 +428,7 @@ export default function Home() {
                     <p className="text-sm font-semibold" style={{ color: 'var(--gold)' }}>
                       {t.author}
                     </p>
-                    <p className="text-xs opacity-90 mt-1">{t.role}</p>
+                    <p className="text-sm opacity-90 mt-1">{t.role}</p>
                   </div>
                 </div>
               ))}
@@ -453,7 +453,7 @@ export default function Home() {
                   className="rounded-lg overflow-hidden"
                   style={{ border: '1px solid rgba(255,255,255,0.06)' }}
                 >
-                  <button className="btn w-full text-left px-6 py-5 flex justify-between items-center gap-4" onClick={() => setOpenFaq(openFaq === i ? null : i)} style={{ background: openFaq === i ? 'rgba(255,255,255,0.04)' : 'rgba(255,255,255,0.02)' }} >
+                  <button style={{ cursor: "pointer" }} className="btn w-full text-left px-6 py-5 flex justify-between items-center gap-4" onClick={() => setOpenFaq(openFaq === i ? null : i)} style={{ background: openFaq === i ? 'rgba(255,255,255,0.04)' : 'rgba(255,255,255,0.02)' }} >
                     <span className="text-sm font-semibold">{f.q}</span>
                     <span
                       className="text-lg flex-shrink-0 transition-transform"
@@ -541,24 +541,24 @@ export default function Home() {
                   }}
                   className="space-y-4"
                 >
-                  <input type="text" placeholder="Full Name" aria-label="Full name" required className="w-full p-3 border border-gray-300 " style={{ border: '1px solid #ddd', borderRadius: '0.5rem' }} />
-                  <input type="email" placeholder="Email Address" aria-label="Email address" required className="w-full p-3 border border-gray-300 " style={{ border: '1px solid #ddd', borderRadius: '0.5rem' }} />
-                  <input type="text" placeholder="Hotel / Resort Name" aria-label="Hotel or resort name" className="w-full p-3 border border-gray-300 " style={{ border: '1px solid #ddd', borderRadius: '0.5rem' }} />
+                  <input type="text" placeholder="Full Name" aria-label="Full name" required className="w-full p-3 border border-gray-300  border-2 border-current/20" style={{ border: '1px solid #ddd', borderRadius: '0.5rem' }} />
+                  <input type="email" placeholder="Email Address" aria-label="Email address" required className="w-full p-3 border border-gray-300  border-2 border-current/20" style={{ border: '1px solid #ddd', borderRadius: '0.5rem' }} />
+                  <input type="text" placeholder="Hotel / Resort Name" aria-label="Hotel or resort name" className="w-full p-3 border border-gray-300  border-2 border-current/20" style={{ border: '1px solid #ddd', borderRadius: '0.5rem' }} />
                   <select aria-label="" className="w-full p-3 border border-gray-300 " style={{ border: '1px solid #ddd', borderRadius: '0.5rem' }}>
                     <option value="">Service of Interest</option>
                     {services.map((s) => (
                       <option key={s.name}>{s.name}</option>
                     ))}
                   </select>
-                  <input type="text" placeholder="Property Location (City, Country)" aria-label="Property location" className="w-full p-3 border border-gray-300 " style={{ border: '1px solid #ddd', borderRadius: '0.5rem' }} />
-                  <input type="number" placeholder="Number of Rooms" aria-label="Number of rooms" className="w-full p-3 border border-gray-300 " style={{ border: '1px solid #ddd', borderRadius: '0.5rem' }} />
+                  <input type="text" placeholder="Property Location (City, Country)" aria-label="Property location" className="w-full p-3 border border-gray-300  border-2 border-current/20" style={{ border: '1px solid #ddd', borderRadius: '0.5rem' }} />
+                  <input type="number" placeholder="Number of Rooms" aria-label="Number of rooms" className="w-full p-3 border border-gray-300  border-2 border-current/20" style={{ border: '1px solid #ddd', borderRadius: '0.5rem' }} />
                   <textarea
                     rows={5}
                     placeholder="Tell us about your property and the challenges you are facing..."
                     aria-label="Property details and challenges"
                     className="w-full p-3 border border-gray-300 " style={{ border: '1px solid #ddd', borderRadius: '0.5rem' }}
                   />
-                  <button
+                  <button style={{ cursor: "pointer" }}
                     type="submit"
                     aria-label="Request a free consultation"
                     className="w-full py-4 text-sm tracking-wider uppercase font-semibold"
@@ -566,7 +566,7 @@ export default function Home() {
                   >
                     Request Free Consultation
                   </button>
-                  <p className="text-xs opacity-80 text-center">
+                  <p className="text-sm opacity-80 text-center">
                     We respect your privacy. Your information is never shared with third parties.
                   </p>
                 </form>
@@ -580,8 +580,8 @@ export default function Home() {
         <p className="heading-corp text-sm mb-2" style={{ color: 'var(--gold)' }}>
           Apex Hospitality Group
         </p>
-        <p className="text-xs opacity-85">New York · London · Singapore · Dubai</p>
-        <p className="text-xs opacity-80 mt-2">© 2026 Apex Hospitality Group. All rights reserved.</p>
+        <p className="text-sm opacity-85">New York · London · Singapore · Dubai</p>
+        <p className="text-sm opacity-80 mt-2">© 2026 Apex Hospitality Group. All rights reserved.</p>
       </footer>
     </div>
   );
