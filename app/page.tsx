@@ -179,9 +179,9 @@ export default function Home() {
           </h1>
           <p className="text-base tracking-[0.3em] uppercase opacity-90">Group · Advisory</p>
         </div>
-        <div className="hidden lg:flex gap-8 text-xs tracking-[0.15em] uppercase font-medium" style={{ color: '#374151' }}>
+        <div className="hidden lg:flex gap-8 text-xs tracking-[0.15em] uppercase font-medium">
           {['services', 'results', 'approach', 'team', 'testimonials', 'faq', 'contact'].map((s) => (
-            <button className="btn" key={s} onClick={() => scrollTo(s)} aria-label={`Navigate to ${s}`}>
+            <button key={s} onClick={() => scrollTo(s)} aria-label={`Navigate to ${s}`} style={{ color: '#c8c4bf', background: 'transparent', border: 'none', padding: '0.5rem 0', cursor: 'pointer', transition: 'color 0.2s' }} onMouseOver={(e) => (e.target as HTMLElement).style.color = '#e8e4df'} onMouseOut={(e) => (e.target as HTMLElement).style.color = '#c8c4bf'}>
               {s}
             </button>
           ))}
@@ -230,6 +230,9 @@ export default function Home() {
                 </div>
               ))}
             </div>
+            <div className="mt-16 rounded-lg overflow-hidden" style={{ border: '1px solid rgba(255,255,255,0.06)' }}>
+              <img src="https://images.unsplash.com/photo-1566073771259-6a8506099945?w=1200&q=80" alt="Luxury hotel resort with pool" className="w-full h-64 md:h-96 object-cover" loading="lazy" />
+            </div>
           </div>
         </section>
 
@@ -251,7 +254,7 @@ export default function Home() {
                   <h3 className="heading-corp text-lg mb-3" style={{ color: 'var(--gold)' }}>
                     {s.name}
                   </h3>
-                  <p className="text-sm opacity-80 leading-relaxed">{s.desc}</p>
+                  <p className="text-sm opacity-100 leading-relaxed" style={{ color: '#c8c4bf' }}>{s.desc}</p>
                 </div>
               ))}
             </div>
