@@ -186,12 +186,7 @@ export default function Home() {
             </button>
           ))}
         </div>
-        <button className="btn"
-          onClick={() => scrollTo('contact')}
-          aria-label="Book a discovery call"
-          className="text-xs tracking-wider uppercase px-5 py-2"
-          style={{ background: 'var(--gold)', color: 'var(--ink)' }}
-        >
+        <button className="btn text-xs tracking-wider uppercase px-5 py-2" onClick={() => scrollTo('contact')} aria-label="Book a discovery call" style={{ background: 'var(--gold)', color: 'var(--ink)' }} >
           Book a Call
         </button>
       </nav>
@@ -213,18 +208,10 @@ export default function Home() {
               Since 2009, we have advised over 120 properties across 28 countries.
             </p>
             <div className="flex flex-wrap gap-4 mb-16">
-              <button className="btn"
-                onClick={() => scrollTo('contact')}
-                className="text-sm tracking-wider uppercase px-8 py-3 font-semibold"
-                style={{ background: 'var(--gold)', color: 'var(--ink)' }}
-              >
+              <button className="btn text-sm tracking-wider uppercase px-8 py-3 font-semibold" onClick={() => scrollTo('contact')} style={{ background: 'var(--gold)', color: 'var(--ink)' }} >
                 Schedule Discovery Call
               </button>
-              <button className="btn"
-                onClick={() => scrollTo('results')}
-                className="text-sm tracking-wider uppercase px-8 py-3 font-semibold"
-                style={{ border: '1px solid rgba(255,255,255,0.2)', color: '#e8e4df' }}
-              >
+              <button className="btn text-sm tracking-wider uppercase px-8 py-3 font-semibold" onClick={() => scrollTo('results')} style={{ border: '1px solid rgba(255,255,255,0.2)', color: '#e8e4df' }} >
                 View Case Studies
               </button>
             </div>
@@ -430,7 +417,7 @@ export default function Home() {
                   className="p-6 rounded-lg flex flex-col"
                   style={{ background: 'rgba(255,255,255,0.03)', border: '1px solid rgba(255,255,255,0.06)' }}
                 >
-                  <div className="text-3xl mb-4" style={{ color: 'var(--gold)', opacity: '0.75' }}>
+                  <div className="text-3xl mb-4" style={{ color: 'var(--gold)', opacity: '0.88' }}>
                     &ldquo;
                   </div>
                   <p className="text-sm opacity-85 leading-relaxed flex-1 mb-6">{t.quote}</p>
@@ -463,11 +450,7 @@ export default function Home() {
                   className="rounded-lg overflow-hidden"
                   style={{ border: '1px solid rgba(255,255,255,0.06)' }}
                 >
-                  <button className="btn"
-                    onClick={() => setOpenFaq(openFaq === i ? null : i)}
-                    className="w-full text-left px-6 py-5 flex justify-between items-center gap-4"
-                    style={{ background: openFaq === i ? 'rgba(255,255,255,0.04)' : 'rgba(255,255,255,0.02)' }}
-                  >
+                  <button className="btn w-full text-left px-6 py-5 flex justify-between items-center gap-4" onClick={() => setOpenFaq(openFaq === i ? null : i)} style={{ background: openFaq === i ? 'rgba(255,255,255,0.04)' : 'rgba(255,255,255,0.02)' }} >
                     <span className="text-sm font-semibold">{f.q}</span>
                     <span
                       className="text-lg flex-shrink-0 transition-transform"
