@@ -4,32 +4,32 @@ import { useState } from 'react';
 const services = [
   {
     name: 'Hotel Operations',
-    icon: '🏨',
+    icon: '◆',
     desc: 'End-to-end operational audits covering front office, housekeeping, engineering, and security. We map every workflow, identify bottlenecks, and implement lean processes that reduce costs while elevating service delivery. Our proprietary Quality Index scorecard gives leadership a real-time pulse on departmental performance.',
   },
   {
     name: 'Revenue Management',
-    icon: '📈',
+    icon: '◆',
     desc: 'Dynamic pricing strategies powered by demand forecasting, competitive benchmarking, and channel distribution optimization. We build custom revenue management frameworks that maximize RevPAR, reduce OTA commission dependency, and grow direct booking share. Our clients see an average 22 percent RevPAR uplift within the first year.',
   },
   {
     name: 'F&B Consulting',
-    icon: '🍽️',
+    icon: '◆',
     desc: 'Restaurant concept development, menu engineering, kitchen design, and beverage program creation. We analyze food cost ratios, plate composition, and guest ordering patterns to craft menus that delight guests and protect margins. From casual poolside dining to fine dining, we engineer profitable culinary experiences.',
   },
   {
     name: 'Staff Training',
-    icon: '🎓',
+    icon: '◆',
     desc: 'Comprehensive training programs covering service excellence, leadership development, brand standards, and safety compliance. We design custom curricula with hands-on workshops, e-learning modules, and mystery guest evaluations. Our blended approach reduces time-to-competency by 40 percent and measurably improves guest satisfaction scores.',
   },
   {
     name: 'Pre-Opening Support',
-    icon: '🔑',
+    icon: '◆',
     desc: 'Full pre-opening management from FF&E procurement and OS&E selection through staff recruitment, training, and soft-opening orchestration. We coordinate with architects, contractors, and operators to ensure your property launches on time, on brand, and on budget. Seventy-eight properties opened with zero critical-path delays using our methodology.',
   },
   {
     name: 'Brand Strategy',
-    icon: '✨',
+    icon: '◆',
     desc: 'Brand positioning, visual identity development, guest persona creation, and experience journey mapping. We help independent hotels and boutique resorts build brands that command premium rates and fierce guest loyalty. Our brand architecture framework has been adopted by over 40 properties competing successfully against global chains.',
   },
 ];
@@ -179,7 +179,7 @@ export default function Home() {
           </h1>
           <p className="text-[9px] tracking-[0.3em] uppercase opacity-70">Group · Advisory</p>
         </div>
-        <div className="hidden lg:flex gap-8 text-xs tracking-[0.15em] uppercase opacity-60">
+        <div className="hidden lg:flex gap-8 text-xs tracking-[0.15em] uppercase font-medium" style={{ color: '#374151' }}>
           {['services', 'results', 'approach', 'team', 'testimonials', 'faq', 'contact'].map((s) => (
             <button key={s} onClick={() => scrollTo(s)} aria-label={`Navigate to ${s}`}>
               {s}
@@ -207,7 +207,7 @@ export default function Home() {
               Transform your<br />
               hospitality <em style={{ color: 'var(--gold)', fontStyle: 'italic' }}>business.</em>
             </h2>
-            <p className="text-lg md:text-xl opacity-50 max-w-2xl mb-12 leading-relaxed">
+            <p className="text-lg md:text-xl opacity-80 max-w-2xl mb-12 leading-relaxed">
               We partner with independent hotels, boutique resorts, and regional hotel groups to unlock revenue growth,
               streamline operations, and create guest experiences that drive loyalty and premium positioning.
               Since 2009, we have advised over 120 properties across 28 countries.
@@ -264,7 +264,7 @@ export default function Home() {
                   <h3 className="heading-corp text-lg mb-3" style={{ color: 'var(--gold)' }}>
                     {s.name}
                   </h3>
-                  <p className="text-sm opacity-50 leading-relaxed">{s.desc}</p>
+                  <p className="text-sm opacity-80 leading-relaxed">{s.desc}</p>
                 </div>
               ))}
             </div>
@@ -305,19 +305,19 @@ export default function Home() {
                       <p className="font-semibold mb-2" style={{ color: 'var(--gold)' }}>
                         Challenge
                       </p>
-                      <p className="opacity-50 leading-relaxed">{c.challenge}</p>
+                      <p className="opacity-80 leading-relaxed">{c.challenge}</p>
                     </div>
                     <div>
                       <p className="font-semibold mb-2" style={{ color: 'var(--gold)' }}>
                         Solution
                       </p>
-                      <p className="opacity-50 leading-relaxed">{c.solution}</p>
+                      <p className="opacity-80 leading-relaxed">{c.solution}</p>
                     </div>
                     <div>
                       <p className="font-semibold mb-2" style={{ color: 'var(--gold)' }}>
                         Result
                       </p>
-                      <p className="opacity-50 leading-relaxed">{c.result}</p>
+                      <p className="opacity-80 leading-relaxed">{c.result}</p>
                     </div>
                   </div>
                 </div>
@@ -353,7 +353,7 @@ export default function Home() {
                       <p className="text-xs opacity-70 mt-1">{p.duration}</p>
                     </div>
                   </div>
-                  <p className="text-sm opacity-50 leading-relaxed">{p.desc}</p>
+                  <p className="text-sm opacity-80 leading-relaxed">{p.desc}</p>
                 </div>
               ))}
             </div>
@@ -391,12 +391,12 @@ export default function Home() {
                     {t.name}
                   </h3>
                   <p className="text-xs tracking-wider uppercase opacity-70 mb-4">{t.title}</p>
-                  <p className="text-sm opacity-50 leading-relaxed mb-4">{t.bio}</p>
+                  <p className="text-sm opacity-80 leading-relaxed mb-4">{t.bio}</p>
                   <div className="flex flex-wrap gap-2">
                     {t.specialties.map((sp) => (
                       <span
                         key={sp}
-                        className="text-[10px] tracking-wider uppercase px-3 py-1 rounded-full"
+                        className="text-sm tracking-wider uppercase px-3 py-1 rounded-full"
                         style={{ background: 'rgba(212,175,55,0.1)', color: 'var(--gold)' }}
                       >
                         {sp}
@@ -481,7 +481,7 @@ export default function Home() {
                   </button>
                   {openFaq === i && (
                     <div className="px-6 pb-6">
-                      <p className="text-sm opacity-50 leading-relaxed">{f.a}</p>
+                      <p className="text-sm opacity-80 leading-relaxed">{f.a}</p>
                     </div>
                   )}
                 </div>
@@ -502,12 +502,12 @@ export default function Home() {
                 Start Here
               </p>
               <h2 className="heading-corp text-4xl md:text-5xl mb-6">Book a Consultation</h2>
-              <p className="text-base opacity-50 leading-relaxed mb-8">
+              <p className="text-base opacity-80 leading-relaxed mb-8">
                 Tell us about your property, your challenges, and your goals. We offer a complimentary 30-minute
                 discovery call to understand your situation and determine whether we are the right partner. There is
                 no obligation and no pressure, just an honest conversation about what is possible.
               </p>
-              <div className="space-y-3 text-sm opacity-50 mb-8">
+              <div className="space-y-3 text-sm opacity-80 mb-8">
                 <p>📍 350 Fifth Avenue, Suite 5100, New York, NY 10118</p>
                 <p>
                   📧{' '}
@@ -526,7 +526,7 @@ export default function Home() {
                 <p className="text-xs font-semibold uppercase tracking-wider mb-2" style={{ color: 'var(--gold)' }}>
                   What to expect
                 </p>
-                <ul className="text-sm opacity-50 space-y-2 leading-relaxed">
+                <ul className="text-sm opacity-80 space-y-2 leading-relaxed">
                   <li>1. Submit the form with your property details</li>
                   <li>2. We review and respond within 48 hours</li>
                   <li>3. Schedule a 30-minute discovery call</li>
@@ -541,7 +541,7 @@ export default function Home() {
                     <p className="heading-corp text-3xl mb-3" style={{ color: 'var(--gold)' }}>
                       Thank you.
                     </p>
-                    <p className="opacity-50 text-base leading-relaxed">
+                    <p className="opacity-80 text-base leading-relaxed">
                       Your inquiry has been received. A senior partner will contact you within 48 hours to schedule
                       your discovery call. We look forward to learning about your property.
                     </p>
