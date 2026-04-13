@@ -174,7 +174,7 @@ export default function Home() {
         }}
       >
         <div>
-          <h1 className="heading-corp text-xl" style={{ color: 'var(--gold)' }}>
+          <h1 className="heading-sans text-xl" style={{ color: 'var(--gold)' }}>
             Apex Hospitality
           </h1>
           <p className="text-base tracking-[0.3em] uppercase opacity-90">Group · Advisory</p>
@@ -198,7 +198,7 @@ export default function Home() {
             <p className="text-xs tracking-[0.4em] uppercase mb-6" style={{ color: 'var(--gold)' }}>
               Hotel & Resort Consulting
             </p>
-            <h2 className="heading-corp text-5xl md:text-7xl lg:text-8xl mb-8 leading-[1.05]">
+            <h2 className="heading-sans text-5xl md:text-7xl lg:text-8xl mb-8 leading-[1.05]">
               Transform your<br />
               hospitality <em style={{ color: 'var(--gold)', fontStyle: 'italic' }}>business.</em>
             </h2>
@@ -223,7 +223,7 @@ export default function Home() {
                 { n: '96%', l: 'Client Retention' },
               ].map((s) => (
                 <div key={s.l}>
-                  <p className="heading-corp text-2xl md:text-3xl" style={{ color: 'var(--gold)' }}>
+                  <p className="heading-sans text-2xl md:text-3xl" style={{ color: 'var(--gold)' }}>
                     {s.n}
                   </p>
                   <p className="text-sm opacity-90 mt-1">{s.l}</p>
@@ -242,7 +242,7 @@ export default function Home() {
             <p className="text-xs tracking-[0.4em] uppercase mb-3" style={{ color: 'var(--gold)' }}>
               What We Do
             </p>
-            <h2 className="heading-corp text-4xl md:text-5xl mb-4">Services</h2>
+            <h2 className="heading-sans text-4xl md:text-5xl mb-4">Services</h2>
             <p className="text-base opacity-90 max-w-2xl mb-14 leading-relaxed">
               Six core practice areas covering every dimension of hospitality performance. Each engagement is tailored
               to your property, your market, and your ambitions.
@@ -251,7 +251,7 @@ export default function Home() {
               {services.map((s) => (
                 <div key={s.name} className="service-card p-6 rounded-lg" style={{ background: 'rgba(255,255,255,0.03)', border: '1px solid rgba(255,255,255,0.06)' }}>
                   <span className="text-2xl mb-4 block">{s.icon}</span>
-                  <h3 className="heading-corp text-lg mb-3" style={{ color: 'var(--gold)' }}>
+                  <h3 className="heading-sans text-lg mb-3" style={{ color: 'var(--gold)' }}>
                     {s.name}
                   </h3>
                   <p className="text-sm opacity-100 leading-relaxed" style={{ color: '#c8c4bf' }}>{s.desc}</p>
@@ -267,7 +267,7 @@ export default function Home() {
             <p className="text-xs tracking-[0.4em] uppercase mb-3" style={{ color: 'var(--gold)' }}>
               Proven Results
             </p>
-            <h2 className="heading-corp text-4xl md:text-5xl mb-4">Case Studies</h2>
+            <h2 className="heading-sans text-4xl md:text-5xl mb-4">Case Studies</h2>
             <p className="text-base opacity-90 max-w-2xl mb-14 leading-relaxed">
               Real properties, real challenges, measurable outcomes. Here is how we move the needle.
             </p>
@@ -280,7 +280,7 @@ export default function Home() {
                 >
                   <div className="flex flex-col md:flex-row justify-between md:items-center mb-6 gap-4">
                     <div>
-                      <h3 className="heading-corp text-xl md:text-2xl">{c.name}</h3>
+                      <h3 className="heading-sans text-xl md:text-2xl">{c.name}</h3>
                       <p className="text-sm opacity-90 mt-1">{c.type}</p>
                     </div>
                     <span
@@ -322,7 +322,7 @@ export default function Home() {
             <p className="text-xs tracking-[0.4em] uppercase mb-3" style={{ color: 'var(--gold)' }}>
               How We Work
             </p>
-            <h2 className="heading-corp text-4xl md:text-5xl mb-4">Our Approach</h2>
+            <h2 className="heading-sans text-4xl md:text-5xl mb-4">Our Approach</h2>
             <p className="text-base opacity-90 max-w-2xl mb-14 leading-relaxed">
               A structured four-phase methodology refined over 15 years and 120+ engagements. Rigorous in analysis,
               flexible in execution, relentless in follow-through.
@@ -335,11 +335,11 @@ export default function Home() {
                   style={{ background: 'rgba(255,255,255,0.03)', border: '1px solid rgba(255,255,255,0.06)' }}
                 >
                   <div className="flex items-baseline gap-4 mb-3">
-                    <span className="heading-corp text-3xl" style={{ color: 'var(--gold)' }}>
+                    <span className="heading-sans text-3xl" style={{ color: 'var(--gold)' }}>
                       {p.phase}
                     </span>
                     <div>
-                      <h3 className="heading-corp text-lg">{p.name}</h3>
+                      <h3 className="heading-sans text-lg">{p.name}</h3>
                       <p className="text-sm opacity-90 mt-1">{p.duration}</p>
                     </div>
                   </div>
@@ -356,7 +356,7 @@ export default function Home() {
             <p className="text-xs tracking-[0.4em] uppercase mb-3" style={{ color: 'var(--gold)' }}>
               Leadership
             </p>
-            <h2 className="heading-corp text-4xl md:text-5xl mb-4">Our Team</h2>
+            <h2 className="heading-sans text-4xl md:text-5xl mb-4">Our Team</h2>
             <p className="text-base opacity-90 max-w-2xl mb-14 leading-relaxed">
               Senior consultants with deep operator experience. We have sat in the GM chair, run the revenue meeting,
               and led the kitchen. We understand hospitality from the inside.
@@ -377,7 +377,7 @@ export default function Home() {
                       .map((n) => n[0])
                       .join('')}
                   </div>
-                  <h3 className="heading-corp text-lg" style={{ color: 'var(--gold)' }}>
+                  <h3 className="heading-sans text-lg" style={{ color: 'var(--gold)' }}>
                     {t.name}
                   </h3>
                   <p className="text-sm tracking-wider uppercase opacity-90 mb-4">{t.title}</p>
@@ -409,7 +409,7 @@ export default function Home() {
             <p className="text-xs tracking-[0.4em] uppercase mb-3" style={{ color: 'var(--gold)' }}>
               Client Voices
             </p>
-            <h2 className="heading-corp text-4xl md:text-5xl mb-4">Testimonials</h2>
+            <h2 className="heading-sans text-4xl md:text-5xl mb-4">Testimonials</h2>
             <p className="text-base opacity-90 max-w-2xl mb-14 leading-relaxed">
               Our clients say it better than we can. Here is what working with Apex feels like.
             </p>
@@ -442,7 +442,7 @@ export default function Home() {
             <p className="text-xs tracking-[0.4em] uppercase mb-3" style={{ color: 'var(--gold)' }}>
               Common Questions
             </p>
-            <h2 className="heading-corp text-4xl md:text-5xl mb-4">FAQ</h2>
+            <h2 className="heading-sans text-4xl md:text-5xl mb-4">FAQ</h2>
             <p className="text-base opacity-90 max-w-2xl mb-14 leading-relaxed">
               Everything you need to know before starting a conversation with us.
             </p>
@@ -487,7 +487,7 @@ export default function Home() {
               <p className="text-xs tracking-[0.4em] uppercase mb-3" style={{ color: 'var(--gold)' }}>
                 Start Here
               </p>
-              <h2 className="heading-corp text-4xl md:text-5xl mb-6">Book a Consultation</h2>
+              <h2 className="heading-sans text-4xl md:text-5xl mb-6">Book a Consultation</h2>
               <p className="text-base opacity-80 leading-relaxed mb-8">
                 Tell us about your property, your challenges, and your goals. We offer a complimentary 30-minute
                 discovery call to understand your situation and determine whether we are the right partner. There is
@@ -524,7 +524,7 @@ export default function Home() {
               {submitted ? (
                 <div className="h-full flex items-center">
                   <div>
-                    <p className="heading-corp text-3xl mb-3" style={{ color: 'var(--gold)' }}>
+                    <p className="heading-sans text-3xl mb-3" style={{ color: 'var(--gold)' }}>
                       Thank you.
                     </p>
                     <p className="opacity-80 text-base leading-relaxed">
@@ -577,7 +577,7 @@ export default function Home() {
       </main>
 
       <footer className="py-10 px-6 md:px-8 text-center" style={{ borderTop: '1px solid rgba(255,255,255,0.06)' }}>
-        <p className="heading-corp text-sm mb-2" style={{ color: 'var(--gold)' }}>
+        <p className="heading-sans text-sm mb-2" style={{ color: 'var(--gold)' }}>
           Apex Hospitality Group
         </p>
         <p className="text-sm opacity-85">New York · London · Singapore · Dubai</p>
