@@ -31,7 +31,7 @@ const TEAM = [
 ];
 
 const TESTIMONIALS = [
-  { quote: "Amit's team transformed our operations completely. RevPAR increased 45% and our TripAdvisor rating went from 3.8 to 4.7. Their revenue management strategies alone paid for the engagement ten times over.", name: 'Vikram Singh', location: 'MD, Lakeview Heritage Resort', rating: 5 },
+  { quote: "Amit\'s team transformed our operations completely. RevPAR increased 45% and our TripAdvisor rating went from 3.8 to 4.7. Their revenue management strategies alone paid for the engagement ten times over.", name: 'Vikram Singh', location: 'MD, Lakeview Heritage Resort', rating: 5 },
   { quote: "We engaged them for our pre-opening and they were indispensable. From recruitment to vendor setup to SOPs — everything was seamless. We hit 92% occupancy in Year 1, exceeding all projections.", name: 'Priya Agarwal', location: 'CEO, Azure Beach Resorts', rating: 5 },
   { quote: "Scaling from 15 to 45 hotels seemed impossible until they built our operations playbook. Standardised processes, central reservation system, and training modules that actually work at scale.", name: 'Rohit Mehta', location: 'Founder, StayEasy Hotels', rating: 5 },
 ];
