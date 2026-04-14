@@ -181,12 +181,12 @@ export default function Home() {
         </div>
         <div className="hidden lg:flex gap-8 text-xs tracking-[0.15em] uppercase font-medium">
           {['services', 'results', 'approach', 'team', 'testimonials', 'faq', 'contact'].map((s) => (
-            <button style={{ cursor: "pointer" }} key={s} onClick={() => scrollTo(s)} aria-label={`Navigate to ${s}`} style={{ color: '#c8c4bf', background: 'transparent', border: 'none', padding: '0.5rem 0', cursor: 'pointer', transition: 'color 0.2s' }} onMouseOver={(e) => (e.target as HTMLElement).style.color = '#e8e4df'} onMouseOut={(e) => (e.target as HTMLElement).style.color = '#c8c4bf'}>
+ <button style={{ color: '#c8c4bf', background: 'transparent', border: 'none', padding: '0.5rem 0', cursor: 'pointer', transition: 'color 0.2s' }} key={s} onClick={() => scrollTo(s)} aria-label={`Navigate to ${s}`} onMouseOver={(e) => (e.target as HTMLElement).style.color = '#e8e4df'} onMouseOut={(e) => (e.target as HTMLElement).style.color = '#c8c4bf'}>
               {s}
             </button>
           ))}
         </div>
-        <button style={{ cursor: "pointer" }} className="btn text-xs tracking-wider uppercase px-5 py-2" onClick={() => scrollTo('contact')} aria-label="Book a discovery call" style={{ background: 'var(--gold)', color: 'var(--ink)' }} >
+ <button style={{ cursor: "pointer", background: 'var(--gold)', color: 'var(--ink)' }} className="btn text-xs tracking-wider uppercase px-5 py-2" onClick={() => scrollTo('contact')} aria-label="Book a discovery call" >
           Book a Call
         </button>
       </nav>
@@ -208,10 +208,10 @@ export default function Home() {
               Since 2009, we have advised over 120 properties across 28 countries.
             </p>
             <div className="flex flex-wrap gap-4 mb-16">
-              <button style={{ cursor: "pointer" }} className="btn text-sm tracking-wider uppercase px-8 py-3 font-semibold" onClick={() => scrollTo('contact')} style={{ background: 'var(--gold)', color: 'var(--ink)' }} >
+ <button style={{ cursor: "pointer", background: 'var(--gold)', color: 'var(--ink)' }} className="btn text-sm tracking-wider uppercase px-8 py-3 font-semibold" onClick={() => scrollTo('contact')} >
                 Schedule Discovery Call
               </button>
-              <button style={{ cursor: "pointer" }} className="btn text-sm tracking-wider uppercase px-8 py-3 font-semibold" onClick={() => scrollTo('results')} style={{ border: '1px solid rgba(255,255,255,0.2)', color: '#e8e4df' }} >
+ <button style={{ cursor: "pointer", border: '1px solid rgba(255,255,255,0.2)', color: '#e8e4df' }} className="btn text-sm tracking-wider uppercase px-8 py-3 font-semibold" onClick={() => scrollTo('results')} >
                 View Case Studies
               </button>
             </div>
@@ -453,7 +453,7 @@ export default function Home() {
                   className="rounded-lg overflow-hidden"
                   style={{ border: '1px solid rgba(255,255,255,0.06)' }}
                 >
-                  <button style={{ cursor: "pointer" }} className="btn w-full text-left px-6 py-5 flex justify-between items-center gap-4" onClick={() => setOpenFaq(openFaq === i ? null : i)} style={{ background: openFaq === i ? 'rgba(255,255,255,0.04)' : 'rgba(255,255,255,0.02)' }} >
+ <button style={{ cursor: "pointer", background: openFaq === i ? 'rgba(255,255,255,0.04)' : 'rgba(255,255,255,0.02)' }} className="btn w-full text-left px-6 py-5 flex justify-between items-center gap-4" onClick={() => setOpenFaq(openFaq === i ? null : i)} >
                     <span className="text-sm font-semibold">{f.q}</span>
                     <span
                       className="text-lg flex-shrink-0 transition-transform"
@@ -558,7 +558,7 @@ export default function Home() {
                     aria-label="Property details and challenges"
                     className="w-full p-3 border border-gray-300 " style={{ border: '1px solid #ddd', borderRadius: '0.5rem' }}
                   />
-                  <button style={{ cursor: "pointer" }}
+                  <button
                     type="submit"
                     aria-label="Request a free consultation"
                     className="w-full py-4 text-sm tracking-wider uppercase font-semibold"
