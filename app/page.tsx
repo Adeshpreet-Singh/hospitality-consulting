@@ -24,21 +24,37 @@ const CASE_STUDIES = [
 ];
 
 const TEAM = [
-  { name: 'Amit Khanna', role: 'Founder & Principal', initials: 'AK', spec: '25 years in hospitality. Ex-VP Operations at Taj Hotels. Cornell Hotel School alumnus.' },
-  { name: 'Sarah Chen', role: 'Director — Revenue', initials: 'SC', spec: '18 years in revenue management. Previously with Marriott International across APAC.' },
-  { name: 'Raj Patel', role: 'Director — Pre-Opening', initials: 'RP', spec: '20+ hotel openings across India and Middle East. Expert in FF&E and OS&E procurement.' },
-  { name: 'Meera Nair', role: 'Director — Guest Experience', initials: 'MN', spec: '15 years designing service excellence programs. Former Quality Head at Oberoi Hotels.' },
+  { name: 'Amit Khanna', role: 'Founder & Principal', initials: 'AK', spec: '25 years in hospitality. Ex-VP Operations at Taj Hotels. Cornell Hotel School alumnus.', img: 'https://images.unsplash.com/photo-1560250097-0b93528c311a?w=300&h=300&fit=crop' },
+  { name: 'Sarah Chen', role: 'Director — Revenue', initials: 'SC', spec: '18 years in revenue management. Previously with Marriott International across APAC.', img: 'https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=300&h=300&fit=crop' },
+  { name: 'Raj Patel', role: 'Director — Pre-Opening', initials: 'RP', spec: '20+ hotel openings across India and Middle East. Expert in FF&E and OS&E procurement.', img: 'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=300&h=300&fit=crop' },
+  { name: 'Meera Nair', role: 'Director — Guest Experience', initials: 'MN', spec: '15 years designing service excellence programs. Former Quality Head at Oberoi Hotels.', img: 'https://images.unsplash.com/photo-1580489944761-15a19d654956?w=300&h=300&fit=crop' },
 ];
 
-const testimonials = [
+const TESTIMONIALS = [
   { quote: "Amit's team transformed our operations completely. RevPAR increased 45% and our TripAdvisor rating went from 3.8 to 4.7. Their revenue management strategies alone paid for the engagement ten times over.", name: 'Vikram Singh', location: 'MD, Lakeview Heritage Resort', rating: 5 },
   { quote: "We engaged them for our pre-opening and they were indispensable. From recruitment to vendor setup to SOPs — everything was seamless. We hit 92% occupancy in Year 1, exceeding all projections.", name: 'Priya Agarwal', location: 'CEO, Azure Beach Resorts', rating: 5 },
   { quote: "Scaling from 15 to 45 hotels seemed impossible until they built our operations playbook. Standardised processes, central reservation system, and training modules that actually work at scale.", name: 'Rohit Mehta', location: 'Founder, StayEasy Hotels', rating: 5 },
 ];
 
+const APPROACH_STEPS = [
+  { num: '01', title: 'Diagnose', desc: 'We begin with a comprehensive 360-degree audit of your property — operations, finance, guest sentiment, competitive landscape, and digital presence. Our diagnostic framework identifies the highest-impact opportunities for improvement.', icon: '🔍' },
+  { num: '02', title: 'Strategize', desc: 'Based on diagnostic findings, we craft a tailored roadmap with clear KPIs, timelines, and investment requirements. Every strategy is grounded in data and benchmarked against industry leaders.', icon: '📋' },
+  { num: '03', title: 'Implement', desc: 'Our team embeds alongside yours to drive execution. We dont just hand over a report — we roll up our sleeves and ensure changes stick. Weekly check-ins, training workshops, and progress dashboards keep everyone aligned.', icon: '⚙️' },
+  { num: '04', title: 'Sustain', desc: 'We build internal capability so improvements endure long after our engagement ends. Knowledge transfer, SOP documentation, and ongoing advisory support ensure lasting transformation.', icon: '🔄' },
+];
+
+const INSIGHTS = [
+  { title: 'The Future of Revenue Management in Post-Pandemic Hospitality', date: 'Mar 2026', category: 'Revenue', img: 'https://images.unsplash.com/photo-1551882547-ff40c63fe5fa?w=400&h=250&fit=crop', excerpt: 'How AI-powered dynamic pricing and direct booking strategies are reshaping hotel revenue optimization.' },
+  { title: 'Building a World-Class Housekeeping Operation', date: 'Feb 2026', category: 'Operations', img: 'https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?w=400&h=250&fit=crop', excerpt: 'A step-by-step guide to achieving consistent 95%+ cleanliness scores and operational efficiency.' },
+  { title: 'Sustainability as a Competitive Advantage', date: 'Jan 2026', category: 'Sustainability', img: 'https://images.unsplash.com/photo-1501785888041-af3ef285b470?w=400&h=250&fit=crop', excerpt: 'Why green-certified hotels outperform peers by 18% in RevPAR and how to get there.' },
+];
+
+const CLIENT_LOGOS = ['Taj Hotels', 'Marriott', 'Oberoi', 'ITC Hotels', 'Lemon Tree', 'Sarovar'];
+
 export default function Home() {
   const [submitted, setSubmitted] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const [activeTab, setActiveTab] = useState(0);
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 50);
@@ -65,7 +81,7 @@ export default function Home() {
             </div>
           </div>
           <div className="hidden lg:flex items-center gap-8">
-            {['services', 'results', 'case-studies', 'team', 'testimonials', 'contact'].map((s) => (
+            {['services', 'approach', 'results', 'case-studies', 'team', 'testimonials', 'contact'].map((s) => (
               <button key={s} onClick={() => scrollTo(s)} className="nav-link capitalize">{s.replace('-', ' ')}</button>
             ))}
             <button onClick={() => scrollTo('contact')} className="btn-amber text-sm">Get Started</button>
@@ -73,29 +89,50 @@ export default function Home() {
         </div>
       </nav>
 
-      {/* Hero */}
+      {/* Hero — Split Layout */}
       <section className="relative min-h-screen flex items-center overflow-hidden" style={{ background: 'linear-gradient(135deg, #0c1222 0%, #1e293b 100%)' }}>
         <div className="absolute inset-0">
           <img src="https://images.unsplash.com/photo-1566073771259-6a8506099945?w=1600&h=900&fit=crop" alt="Luxury hotel lobby" className="w-full h-full object-cover opacity-20" />
         </div>
         <div className="absolute top-20 right-10 w-96 h-96 bg-amber-500/5 rounded-full blur-3xl" />
+        <div className="absolute bottom-20 left-10 w-72 h-72 bg-amber-500/3 rounded-full blur-2xl" />
         <div className="relative max-w-7xl mx-auto px-6 py-32 text-white">
-          <div className="max-w-2xl">
-            <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full text-xs font-bold mb-8" style={{ background: 'rgba(245,158,11,0.15)', color: '#fbbf24', border: '1px solid rgba(245,158,11,0.2)' }}>
-              ★ Trusted by 200+ Hotels Worldwide
-            </span>
-            <h1 className="text-5xl lg:text-7xl font-bold mb-6 leading-[1.05]" style={{ fontFamily: 'Source Serif 4, serif' }}>
-              Elevate your<br />
-              <span style={{ color: '#fbbf24' }}>hospitality</span><br />
-              experience.
-            </h1>
-            <p className="text-lg mb-10 leading-relaxed" style={{ color: 'rgba(255,255,255,0.6)' }}>
-              Boutique consulting firm specialising in hotel operations, revenue management, and guest experience design. We help hotels and resorts achieve operational excellence and sustainable growth.
-            </p>
-            <div className="flex flex-wrap gap-4">
-              <button onClick={() => scrollTo('contact')} className="btn-amber px-10 py-4">Book Consultation</button>
-              <button onClick={() => scrollTo('case-studies')} className="btn-outline-amber !border-white/30 !text-white hover:!bg-white/10 px-10 py-4">Case Studies</button>
+          <div className="grid lg:grid-cols-2 gap-16 items-center">
+            <div>
+              <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full text-xs font-bold mb-8" style={{ background: 'rgba(245,158,11,0.15)', color: '#fbbf24', border: '1px solid rgba(245,158,11,0.2)' }}>
+                ★ Trusted by 200+ Hotels Worldwide
+              </span>
+              <h1 className="text-5xl lg:text-7xl font-bold mb-6 leading-[1.05]" style={{ fontFamily: 'Source Serif 4, serif' }}>
+                Elevate your<br />
+                <span style={{ color: '#fbbf24' }}>hospitality</span><br />
+                experience.
+              </h1>
+              <p className="text-lg mb-10 leading-relaxed" style={{ color: 'rgba(255,255,255,0.6)' }}>
+                Boutique consulting firm specialising in hotel operations, revenue management, and guest experience design. We help hotels and resorts achieve operational excellence and sustainable growth across 18 countries.
+              </p>
+              <div className="flex flex-wrap gap-4">
+                <button onClick={() => scrollTo('contact')} className="btn-amber px-10 py-4">Book Consultation</button>
+                <button onClick={() => scrollTo('case-studies')} className="btn-outline-amber !border-white/30 !text-white hover:!bg-white/10 px-10 py-4">Case Studies</button>
+              </div>
             </div>
+            <div className="hidden lg:grid grid-cols-2 gap-4">
+              <img src="https://images.unsplash.com/photo-1551882547-ff40c63fe5fa?w=400&h=500&fit=crop" alt="Hotel exterior" className="rounded-2xl w-full h-64 object-cover opacity-60" />
+              <img src="https://images.unsplash.com/photo-1571896349842-33c89424de2d?w=400&h=500&fit=crop" alt="Resort pool" className="rounded-2xl w-full h-64 object-cover opacity-60 mt-12" />
+              <img src="https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?w=400&h=500&fit=crop" alt="Hotel room" className="rounded-2xl w-full h-64 object-cover opacity-60 -mt-12" />
+              <img src="https://images.unsplash.com/photo-1520250497591-112f2f40a3f4?w=400&h=500&fit=crop" alt="Luxury suite" className="rounded-2xl w-full h-64 object-cover opacity-60" />
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Client Logos Bar */}
+      <section className="py-12 border-b" style={{ borderColor: '#f1f5f9' }}>
+        <div className="max-w-6xl mx-auto px-6">
+          <p className="text-center text-xs tracking-[0.2em] uppercase font-bold mb-8" style={{ color: '#94a3b8' }}>Trusted by Leading Brands</p>
+          <div className="flex flex-wrap justify-center items-center gap-12">
+            {CLIENT_LOGOS.map((logo, i) => (
+              <span key={i} className="text-lg font-bold" style={{ fontFamily: 'Source Serif 4, serif', color: '#cbd5e1' }}>{logo}</span>
+            ))}
           </div>
         </div>
       </section>
@@ -139,6 +176,28 @@ export default function Home() {
         </div>
       </section>
 
+      {/* Approach — Horizontal Timeline */}
+      <section id="approach" className="section-reveal py-28" style={{ background: '#0c1222' }}>
+        <div className="max-w-7xl mx-auto px-6 text-white">
+          <div className="text-center mb-16">
+            <span className="text-xs tracking-[0.2em] uppercase font-bold" style={{ color: '#fbbf24' }}>Our Methodology</span>
+            <h2 className="text-4xl lg:text-5xl font-bold mt-3">The Horizon Approach</h2>
+            <p className="mt-4 max-w-2xl mx-auto" style={{ color: 'rgba(255,255,255,0.5)' }}>A proven four-phase methodology refined over 200+ hotel engagements. Each phase builds on the last, ensuring sustainable transformation.</p>
+          </div>
+          <div className="grid md:grid-cols-4 gap-6">
+            {APPROACH_STEPS.map((step, i) => (
+              <div key={i} className="relative p-6 rounded-2xl" style={{ background: 'rgba(255,255,255,0.03)', border: '1px solid rgba(255,255,255,0.06)' }}>
+                <div className="text-3xl mb-4">{step.icon}</div>
+                <div className="text-xs font-bold tracking-wider mb-2" style={{ color: '#fbbf24' }}>PHASE {step.num}</div>
+                <h3 className="text-xl font-bold mb-3" style={{ fontFamily: 'Source Serif 4, serif' }}>{step.title}</h3>
+                <p className="text-sm leading-relaxed" style={{ color: 'rgba(255,255,255,0.5)' }}>{step.desc}</p>
+                {i < 3 && <div className="hidden md:block absolute top-1/2 -right-3 w-6 h-0.5" style={{ background: '#fbbf24', opacity: 0.3 }} />}
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* Case Studies */}
       <section id="case-studies" className="section-reveal py-28" style={{ background: '#f8fafc' }}>
         <div className="max-w-7xl mx-auto px-6">
@@ -172,12 +231,45 @@ export default function Home() {
           </div>
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
             {TEAM.map((t, i) => (
-              <div key={i} className="consult-card p-8 text-center">
-                <div className="w-20 h-20 mx-auto mb-5 rounded-2xl bg-gradient-to-br from-amber-500 to-amber-700 flex items-center justify-center text-2xl font-bold text-white shadow-lg">{t.initials}</div>
-                <h3 className="text-lg font-bold" style={{ color: '#0f172a' }}>{t.name}</h3>
-                <p className="text-sm font-medium mt-1" style={{ color: '#d97706' }}>{t.role}</p>
-                <div className="w-10 h-0.5 mx-auto my-4" style={{ background: '#fde68a' }} />
-                <p className="text-sm leading-relaxed" style={{ color: '#475569' }}>{t.spec}</p>
+              <div key={i} className="consult-card overflow-hidden">
+                <div className="relative h-56 overflow-hidden">
+                  <img src={t.img} alt={t.name} className="w-full h-full object-cover" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
+                  <div className="absolute bottom-4 left-4 text-white">
+                    <h3 className="text-lg font-bold">{t.name}</h3>
+                    <p className="text-xs" style={{ color: '#fbbf24' }}>{t.role}</p>
+                  </div>
+                </div>
+                <div className="p-6">
+                  <p className="text-sm leading-relaxed" style={{ color: '#475569' }}>{t.spec}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Insights / Blog */}
+      <section className="section-reveal py-28" style={{ background: '#f8fafc' }}>
+        <div className="max-w-7xl mx-auto px-6">
+          <div className="text-center mb-16">
+            <span className="text-xs tracking-[0.2em] uppercase font-bold" style={{ color: '#d97706' }}>Knowledge Hub</span>
+            <h2 className="text-4xl lg:text-5xl font-bold mt-3" style={{ color: '#0f172a' }}>Latest Insights</h2>
+          </div>
+          <div className="grid md:grid-cols-3 gap-8">
+            {INSIGHTS.map((insight, i) => (
+              <div key={i} className="case-card">
+                <div className="case-img">
+                  <img src={insight.img} alt={insight.title} />
+                </div>
+                <div className="p-6">
+                  <div className="flex items-center gap-3 mb-3">
+                    <span className="text-xs font-bold px-3 py-1 rounded-full" style={{ background: '#fffbeb', color: '#92400e' }}>{insight.category}</span>
+                    <span className="text-xs" style={{ color: '#94a3b8' }}>{insight.date}</span>
+                  </div>
+                  <h3 className="text-lg font-bold mb-2" style={{ color: '#0f172a' }}>{insight.title}</h3>
+                  <p className="text-sm leading-relaxed" style={{ color: '#475569' }}>{insight.excerpt}</p>
+                </div>
               </div>
             ))}
           </div>
@@ -192,10 +284,10 @@ export default function Home() {
             <h2 className="text-4xl lg:text-5xl font-bold mt-3">Client Stories</h2>
           </div>
           <div className="grid md:grid-cols-3 gap-8">
-            {testimonials.map((t, i) => (
+            {TESTIMONIALS.map((t, i) => (
               <div key={i} className="p-8 rounded-2xl" style={{ background: 'rgba(255,255,255,0.05)', border: '1px solid rgba(255,255,255,0.08)' }}>
                 <div className="flex gap-1 mb-4">{Array.from({ length: t.rating }).map((_, j) => (<span key={j} style={{ color: '#fbbf24' }}>★</span>))}</div>
-                <p className="text-sm leading-relaxed mb-6 italic" style={{ color: 'rgba(255,255,255,0.6)' }}>"{t.quote}"</p>
+                <p className="text-sm leading-relaxed mb-6 italic" style={{ color: 'rgba(255,255,255,0.6)' }}>&ldquo;{t.quote}&rdquo;</p>
                 <div>
                   <div className="font-bold text-sm">{t.name}</div>
                   <div className="text-xs mt-1" style={{ color: 'rgba(255,255,255,0.4)' }}>{t.location}</div>
@@ -211,8 +303,8 @@ export default function Home() {
         <div className="max-w-6xl mx-auto px-6 grid lg:grid-cols-2 gap-16">
           <div>
             <span className="text-xs tracking-[0.2em] uppercase font-bold" style={{ color: '#d97706' }}>Contact</span>
-            <h2 className="text-4xl lg:text-5xl font-bold mt-3 mb-6" style={{ color: '#0f172a' }}>Let's Transform Your Hotel</h2>
-            <p className="mb-10 leading-relaxed" style={{ color: '#475569' }}>Book a free discovery call. We will understand your challenges, share relevant case studies, and outline how we can help.</p>
+            <h2 className="text-4xl lg:text-5xl font-bold mt-3 mb-6" style={{ color: '#0f172a' }}>Let&rsquo;s Transform Your Hotel</h2>
+            <p className="mb-10 leading-relaxed" style={{ color: '#475569' }}>Book a free discovery call. We will understand your challenges, share relevant case studies, and outline how we can help your property achieve its full potential.</p>
             <div className="space-y-6">
               {[
                 { label: 'Email', value: 'hello@horizonhospitality.in' },
@@ -225,6 +317,9 @@ export default function Home() {
                   <div style={{ color: '#0f172a' }}>{item.value}</div>
                 </div>
               ))}
+            </div>
+            <div className="mt-10">
+              <img src="https://images.unsplash.com/photo-1497366216548-37526070297c?w=500&h=300&fit=crop" alt="Office" className="rounded-2xl w-full h-48 object-cover" />
             </div>
           </div>
           <form className="consult-card p-8 space-y-5" onSubmit={(e) => { e.preventDefault(); setSubmitted(true); setTimeout(() => setSubmitted(false), 3000); }}>
@@ -245,6 +340,16 @@ export default function Home() {
               <select className="form-input">
                 <option value="">Select service</option>
                 {SERVICES.map((s, i) => (<option key={i} value={s.name}>{s.name}</option>))}
+              </select>
+            </div>
+            <div>
+              <label className="block text-sm mb-2 font-medium" style={{ color: '#0f172a' }}>Property Size</label>
+              <select className="form-input">
+                <option value="">Number of rooms</option>
+                <option>Under 50 rooms</option>
+                <option>50-150 rooms</option>
+                <option>150-300 rooms</option>
+                <option>300+ rooms</option>
               </select>
             </div>
             <div>
