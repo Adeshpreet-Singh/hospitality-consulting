@@ -92,7 +92,7 @@ export default function Home() {
       {/* Hero — Split Layout */}
       <section className="relative min-h-screen flex items-center overflow-hidden" style={{ background: 'linear-gradient(135deg, #0c1222 0%, #1e293b 100%)' }}>
         <div className="absolute inset-0">
-          <img src="https://images.unsplash.com/photo-1566073771259-6a8506099945?w=1600&h=900&fit=crop" alt="Luxury hotel lobby" className="w-full h-full object-cover opacity-20" />
+          <img src="https://images.unsplash.com/photo-1566073771259-6a8506099945?w=1600&h=900&fit=crop" alt="Luxury hotel lobby" className="w-full h-full object-cover opacity-80" />
         </div>
         <div className="absolute top-20 right-10 w-96 h-96 bg-amber-500/5 rounded-full blur-3xl" />
         <div className="absolute bottom-20 left-10 w-72 h-72 bg-amber-500/3 rounded-full blur-2xl" />
@@ -116,10 +116,10 @@ export default function Home() {
               </div>
             </div>
             <div className="hidden lg:grid grid-cols-2 gap-4">
-              <img src="https://images.unsplash.com/photo-1551882547-ff40c63fe5fa?w=400&h=500&fit=crop" alt="Hotel exterior" className="rounded-2xl w-full h-64 object-cover opacity-60" />
-              <img src="https://images.unsplash.com/photo-1571896349842-33c89424de2d?w=400&h=500&fit=crop" alt="Resort pool" className="rounded-2xl w-full h-64 object-cover opacity-60 mt-12" />
-              <img src="https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?w=400&h=500&fit=crop" alt="Hotel room" className="rounded-2xl w-full h-64 object-cover opacity-60 -mt-12" />
-              <img src="https://images.unsplash.com/photo-1520250497591-112f2f40a3f4?w=400&h=500&fit=crop" alt="Luxury suite" className="rounded-2xl w-full h-64 object-cover opacity-60" />
+              <img src="https://images.unsplash.com/photo-1551882547-ff40c63fe5fa?w=400&h=500&fit=crop" alt="Hotel exterior" className="rounded-2xl w-full h-64 object-cover opacity-92" />
+              <img src="https://images.unsplash.com/photo-1571896349842-33c89424de2d?w=400&h=500&fit=crop" alt="Resort pool" className="rounded-2xl w-full h-64 object-cover opacity-92 mt-12" />
+              <img src="https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?w=400&h=500&fit=crop" alt="Hotel room" className="rounded-2xl w-full h-64 object-cover opacity-92 -mt-12" />
+              <img src="https://images.unsplash.com/photo-1520250497591-112f2f40a3f4?w=400&h=500&fit=crop" alt="Luxury suite" className="rounded-2xl w-full h-64 object-cover opacity-92" />
             </div>
           </div>
         </div>
@@ -191,7 +191,7 @@ export default function Home() {
                 <div className="text-xs font-bold tracking-wider mb-2" style={{ color: '#fbbf24' }}>PHASE {step.num}</div>
                 <h3 className="text-xl font-bold mb-3" style={{ fontFamily: 'Source Serif 4, serif' }}>{step.title}</h3>
                 <p className="text-sm leading-relaxed" style={{ color: 'rgba(255,255,255,0.5)' }}>{step.desc}</p>
-                {i < 3 && <div className="hidden md:block absolute top-1/2 -right-3 w-6 h-0.5" style={{ background: '#fbbf24', opacity: 0.3 }} />}
+                {i < 3 && <div className="hidden md:block absolute top-1/2 -right-3 w-6 h-0.5" style={{ background: '#fbbf24', opacity: '0.9' }} />}
               </div>
             ))}
           </div>
@@ -367,29 +367,29 @@ export default function Home() {
           <div className="grid md:grid-cols-4 gap-10 mb-12">
             <div>
               <div className="text-xl font-bold mb-3" style={{ fontFamily: 'Source Serif 4, serif', color: '#fbbf24' }}>Horizon</div>
-              <p className="text-sm leading-relaxed opacity-50">Boutique hospitality consulting. Operations, revenue, guest experience, and digital transformation for hotels worldwide.</p>
+              <p className="text-sm leading-relaxed opacity-90">Boutique hospitality consulting. Operations, revenue, guest experience, and digital transformation for hotels worldwide.</p>
             </div>
             <div>
               <h4 className="font-semibold mb-4 text-sm uppercase tracking-wider opacity-70">Services</h4>
-              <ul className="space-y-2 text-sm opacity-50">
+              <ul className="space-y-2 text-sm opacity-90">
                 {SERVICES.slice(0, 4).map((s, i) => (<li key={i} className="hover:opacity-100 transition-opacity cursor-pointer">{s.name}</li>))}
               </ul>
             </div>
             <div>
               <h4 className="font-semibold mb-4 text-sm uppercase tracking-wider opacity-70">Company</h4>
-              <ul className="space-y-2 text-sm opacity-50">
+              <ul className="space-y-2 text-sm opacity-90">
                 {['About', 'Team', 'Careers', 'Insights'].map((l, i) => (<li key={i} className="hover:opacity-100 transition-opacity cursor-pointer">{l}</li>))}
               </ul>
             </div>
             <div>
               <h4 className="font-semibold mb-4 text-sm uppercase tracking-wider opacity-70">Offices</h4>
-              <ul className="space-y-2 text-sm opacity-50">
+              <ul className="space-y-2 text-sm opacity-90">
                 {['New Delhi', 'Mumbai', 'Dubai', 'Singapore'].map((l, i) => (<li key={i}>{l}</li>))}
               </ul>
             </div>
           </div>
           <div className="border-t border-white/10 pt-8 text-center">
-            <p className="text-xs opacity-30">© 2026 Horizon Hospitality Advisors. All rights reserved.</p>
+            <p className="text-xs opacity-85">© 2026 Horizon Hospitality Advisors. All rights reserved.</p>
           </div>
         </div>
       </footer>
