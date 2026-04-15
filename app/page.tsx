@@ -370,26 +370,26 @@ export default function Home() {
               <p className="text-sm leading-relaxed opacity-90">Boutique hospitality consulting. Operations, revenue, guest experience, and digital transformation for hotels worldwide.</p>
             </div>
             <div>
-              <h4 className="font-semibold mb-4 text-sm uppercase tracking-wider opacity-70">Services</h4>
+              <h4 className="font-semibold mb-4 text-sm uppercase tracking-wider opacity-80">Services</h4>
               <ul className="space-y-2 text-sm opacity-90">
                 {SERVICES.slice(0, 4).map((s, i) => (<li key={i} className="hover:opacity-100 transition-opacity cursor-pointer">{s.name}</li>))}
               </ul>
             </div>
             <div>
-              <h4 className="font-semibold mb-4 text-sm uppercase tracking-wider opacity-70">Company</h4>
+              <h4 className="font-semibold mb-4 text-sm uppercase tracking-wider opacity-80">Company</h4>
               <ul className="space-y-2 text-sm opacity-90">
                 {['About', 'Team', 'Careers', 'Insights'].map((l, i) => (<li key={i} className="hover:opacity-100 transition-opacity cursor-pointer">{l}</li>))}
               </ul>
             </div>
             <div>
-              <h4 className="font-semibold mb-4 text-sm uppercase tracking-wider opacity-70">Offices</h4>
+              <h4 className="font-semibold mb-4 text-sm uppercase tracking-wider opacity-80">Offices</h4>
               <ul className="space-y-2 text-sm opacity-90">
                 {['New Delhi', 'Mumbai', 'Dubai', 'Singapore'].map((l, i) => (<li key={i}>{l}</li>))}
               </ul>
             </div>
           </div>
           <div className="border-t border-white/10 pt-8 text-center">
-            <p className="text-xs opacity-85">© 2026 Horizon Hospitality Advisors. All rights reserved.</p>
+            <p className="text-xs opacity-95">© 2026 Horizon Hospitality Advisors. All rights reserved.</p>
           </div>
         </div>
       </footer>
