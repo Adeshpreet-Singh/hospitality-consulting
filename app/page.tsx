@@ -98,7 +98,7 @@ export default function Home() {
  </div>
 
  {/* Desktop Nav */}
- <div className="hidden md:flex">
+ <div className="hidden md:flex gap-6 items-center">
  {navItems.map((item) => (
  <button
  key={item}
